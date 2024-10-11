@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "es6",                      // Modern JavaScript target
+    "module": "ESNext",                   // ES module system
+    "moduleResolution": "node",           // Use Node's module resolution strategy
+    "jsx": "react-jsx",                   // Enable JSX for React
+    "baseUrl": ".",                       // Base URL is the root of the project
+    "resolveJsonModule": true,            // Allow importing JSON modules
+    "allowSyntheticDefaultImports": true, // Enable default imports for non-ES modules
+    "esModuleInterop": true,              // Interoperability between ES and CommonJS modules
+    "lib": ["dom", "dom.iterable", "esnext"], // Include DOM and modern JavaScript libs
+    "skipLibCheck": true,                 // Skip type checks for declaration files (speeds up compilation)
+    "strict": true,                       // Enable all strict type-checking options
+    "forceConsistentCasingInFileNames": true, // Ensures consistent file name casing
+    "noImplicitAny": true,                // Disallows usage of `any` type unless explicitly declared
+    "noUnusedLocals": true,               // Report unused local variables
+    "noUnusedParameters": true,           // Report unused function parameters
+    "incremental": true                   // Speed up subsequent compilations by storing info
+  },
+  "include": [
+    "src/**/*",          // Include all files in src
+    "server/**/*",       // Include server-side files if needed
+    "tests/**/*",        // Include test files
+    "configs/**/*"       // Include configuration files
+  ],
+  "exclude": [
+    "node_modules",      // Exclude node_modules
+    "build",             // Exclude build folder
+    "dist",              // Exclude distribution folder
+    "scripts"            // Exclude script files
+  ]
+}
