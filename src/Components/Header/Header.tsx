@@ -4,12 +4,15 @@ import { HeaderNav } from "../../util/DB";
 import { useEffect, useRef, useState } from "react";
 import { MdArrowRight, MdClose } from "react-icons/md";
 import { Link } from "react-router-dom";
-import SideBar from "../SideBar/SideBar";
+import SideBarLeft from "../SideBars/SideBarLeft";
+import SideBarRight from "../SideBars/SideBarRight";
 
 export default function Header() {
   const [headerPosition, setHeaderPosition] = useState<boolean>(false);
   const [IsMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [IsSideBarOpened, setIsSideBarOpened] = useState<boolean>(false);
+  const [IsSideBarRightOpened, setIsSideBarRightOpened] =
+    useState<boolean>(false);
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -50,10 +53,11 @@ export default function Header() {
       {/* PC Header Component */}
       <header
         className={`hidden lg:flex fixed top-0 left-0 right-0 transition-all duration-500 
-      ${headerPosition
-            ? "bg-gradient-to-r from-[rgb(27,17,38)] to-[rgb(24,17,36)] border-b-[0.5px] border-[#ffffff1a]  shadow-md"
-            : "bg-transparent border-none border-b-0"
-          }  
+      ${
+        headerPosition
+          ? "bg-gradient-to-r from-[rgb(27,17,38)] to-[rgb(24,17,36)] border-b-[0.5px] border-[#ffffff1a]  shadow-md"
+          : "bg-transparent border-none border-b-0"
+      }  
       px-8 py-4 flex items-center justify-between z-50`}
         style={{
           backgroundPosition: headerPosition ? "top" : "bottom",
@@ -62,9 +66,12 @@ export default function Header() {
         }}
       >
         <div className="flex items-center">
-          <div className="bg-black rounded-full p-3 cursor-pointer hover:shadow-custom little transition-all duration-500">
+          <div
+            onClick={() => setIsSideBarOpened(!IsSideBarOpened)}
+            className="bg-black rounded-full p-3 cursor-pointer hover:shadow-custom little transition-all duration-500"
+          >
             <span className="text-white cursor-pointer">
-              <TiThMenu />
+              {IsSideBarOpened ? <MdClose /> : <TiThMenu />}
             </span>
           </div>
           <div className="text-white ml-5">
@@ -80,14 +87,18 @@ export default function Header() {
             <Link
               key={i}
               to={item.Link}
-              className="text-white hover:text-purple-500 transition-all duration-500 relative"
+              className="text-white hover:text-purple-500 transition-all duration-500 relative group"
             >
               {item.Name}
+
               <span className="absolute bottom-0 left-0 h-0.5 w-full scale-x-0 transform bg-purple-500 transition-transform duration-500 group-hover:scale-x-100"></span>
             </Link>
           ))}
         </nav>
-        <button className="hidden CTSButton little   hover:shadow-custom lg:flex justify-center text-[#ddd] hover:text-[#fff] transition-all duration-500 capitalize items-center px-4 py-3 rounded-lg">
+        <button
+          onClick={() => setIsSideBarRightOpened(!IsSideBarRightOpened)}
+          className="hidden CTSButton little   hover:shadow-custom lg:flex justify-center text-[#ddd] hover:text-[#fff] transition-all duration-500 capitalize items-center px-4 py-3 rounded-lg"
+        >
           Connect To Wallet
         </button>
       </header>
@@ -127,7 +138,7 @@ bg-gradient-to-r from-[rgb(27,17,38)] to-[rgb(24,17,36)] border-b-[0.5px] border
               )
             )}
           </nav>
-          <button className="CTSButton little lg:hidden justify-center text-[#ddd] hover:text-[#fff] hover:shadow-custom transition-all duration-500 capitalize items-center px-6 py-3 rounded-lg">
+          <button   onClick={() => setIsSideBarRightOpened(!IsSideBarRightOpened)} className="CTSButton little lg:hidden justify-center text-[#ddd] hover:text-[#fff] hover:shadow-custom transition-all duration-500 capitalize items-center px-6 py-3 rounded-lg">
             Wallet
           </button>
         </div>
@@ -161,14 +172,14 @@ bg-gradient-to-r from-[rgb(27,17,38)] to-[rgb(24,17,36)] border-b-[0.5px] border
 
             <div
               className={`absolute top-full right-0 w-full bg-[#1B121D] text-white z-10 
-      ${IsMenuOpen
-                  ? "block h-60 opacity-100 transform scale-y-100"
-                  : "h-0 opacity-0 transform scale-y-0"
-                } 
+      ${
+        IsMenuOpen
+          ? "block h-60 opacity-100 transform scale-y-100"
+          : "h-0 opacity-0 transform scale-y-0"
+      } 
       transition-all duration-700 ease-in-out`}
             >
-              <nav ref={ref}
-                className="flex flex-col space-y-6 py-3 px-8">
+              <nav ref={ref} className="flex flex-col space-y-6 py-3 px-8">
                 {HeaderNav?.map(
                   (item: { Name: string; Link: string }, i: number) => (
                     <Link
@@ -190,12 +201,17 @@ bg-gradient-to-r from-[rgb(27,17,38)] to-[rgb(24,17,36)] border-b-[0.5px] border
             </div>
           </div>
         </div>
-
-        <SideBar
-          IsSideBarOpened={IsSideBarOpened}
-          setIsSideBarOpened={setIsSideBarOpened}
-        />
       </header>
+
+      <SideBarLeft
+        IsSideBarOpened={IsSideBarOpened}
+        setIsSideBarOpened={setIsSideBarOpened}
+      />
+
+      <SideBarRight
+        IsSideBarRightOpened={IsSideBarRightOpened}
+        setIsSideBarRightOpened={setIsSideBarRightOpened}
+      />
     </>
   );
 }

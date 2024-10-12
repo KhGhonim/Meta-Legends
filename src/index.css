@@ -89,3 +89,19 @@ body {
 .logo:hover {
   filter: brightness(1.2); /* Make the logo brighter on hover */
 }
+
+@keyframes rotateY {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(35deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+.rotateY {
+  animation: rotateY 2s ease-in-out;
+}
