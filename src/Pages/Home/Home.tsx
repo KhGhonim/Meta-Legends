@@ -1,5 +1,8 @@
+import InfoBar from "../../Components/InfoBar/InfoBar";
 import Header from "../../Components/Header/Header";
 import HeroSectionSlider from "../../Components/HeroSectionSlider/HeroSectionSlider";
+import SecoundHeroSection from "../../Components/SecoundHeroSection/SecoundHeroSection";
+import HowToMint from "../../Components/HowToMint/HowToMint";
 
 export default function Home() {
   return (
@@ -10,6 +13,9 @@ export default function Home() {
       <Header />
       {/* <HeroSectionVideo /> */}
       <HeroSectionSlider />
+      <InfoBar/>
+      <SecoundHeroSection />
+      <HowToMint />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { TiThMenu } from "react-icons/ti";
 import logo from "../../assets/logo.svg";
-import { HeaderNav } from "../../util/DB";
+import { HeaderNav } from "../../Context/DB";
 import { useEffect, useRef, useState } from "react";
 import { MdArrowRight, MdClose } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -10,7 +10,7 @@ import SideBarRight from "../SideBars/SideBarRight";
 export default function Header() {
   const [headerPosition, setHeaderPosition] = useState<boolean>(false);
   const [IsMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [IsSideBarOpened, setIsSideBarOpened] = useState<boolean>(false);
+  const [IsLeftSideBarOpened, setIsLeftSideBarOpened] = useState<boolean>(false);
   const [IsSideBarRightOpened, setIsSideBarRightOpened] =
     useState<boolean>(false);
   useEffect(() => {
@@ -67,11 +67,11 @@ export default function Header() {
       >
         <div className="flex items-center">
           <div
-            onClick={() => setIsSideBarOpened(!IsSideBarOpened)}
+            onClick={() => setIsLeftSideBarOpened(!IsLeftSideBarOpened)}
             className="bg-black rounded-full p-3 cursor-pointer hover:shadow-custom little transition-all duration-500"
           >
             <span className="text-white cursor-pointer">
-              {IsSideBarOpened ? <MdClose /> : <TiThMenu />}
+              {IsLeftSideBarOpened ? <MdClose /> : <TiThMenu />}
             </span>
           </div>
           <div className="text-white ml-5">
@@ -113,11 +113,11 @@ bg-gradient-to-r from-[rgb(27,17,38)] to-[rgb(24,17,36)] border-b-[0.5px] border
         >
           <div className="flex items-center">
             <div
-              onClick={() => setIsSideBarOpened(!IsSideBarOpened)}
+              onClick={() => setIsLeftSideBarOpened(!IsLeftSideBarOpened)}
               className="bg-black rounded-full p-3 cursor-pointer little   hover:shadow-custom transition-all duration-500"
             >
               <span className="text-white cursor-pointer">
-                {IsSideBarOpened ? <MdClose /> : <TiThMenu />}
+                {IsLeftSideBarOpened ? <MdClose /> : <TiThMenu />}
               </span>
             </div>
             <div className="text-white font-bold ml-5">
@@ -138,7 +138,10 @@ bg-gradient-to-r from-[rgb(27,17,38)] to-[rgb(24,17,36)] border-b-[0.5px] border
               )
             )}
           </nav>
-          <button   onClick={() => setIsSideBarRightOpened(!IsSideBarRightOpened)} className="CTSButton little lg:hidden justify-center text-[#ddd] hover:text-[#fff] hover:shadow-custom transition-all duration-500 capitalize items-center px-6 py-3 rounded-lg">
+          <button
+            onClick={() => setIsSideBarRightOpened(!IsSideBarRightOpened)}
+            className="CTSButton little lg:hidden justify-center text-[#ddd] hover:text-[#fff] hover:shadow-custom transition-all duration-500 capitalize items-center px-6 py-3 rounded-lg"
+          >
             Wallet
           </button>
         </div>
@@ -204,8 +207,8 @@ bg-gradient-to-r from-[rgb(27,17,38)] to-[rgb(24,17,36)] border-b-[0.5px] border
       </header>
 
       <SideBarLeft
-        IsSideBarOpened={IsSideBarOpened}
-        setIsSideBarOpened={setIsSideBarOpened}
+        IsLeftSideBarOpened={IsLeftSideBarOpened}
+        setIsLeftSideBarOpened={setIsLeftSideBarOpened}
       />
 
       <SideBarRight

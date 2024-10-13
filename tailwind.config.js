@@ -9,6 +9,13 @@ export default {
       boxShadow: {
         'custom': '0px 0px 34px 7px rgba(77, 5, 77, 1)',
       },
+      dropShadow: {
+        'custom': '0 5px 20px rgba(204, 0, 255, 0.15)', // Your custom drop shadow
+      },
+
+      rotate: {
+        'y-31': '150deg',
+      },
 
     },
 

@@ -2,7 +2,7 @@ import { FaBackward, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Photos, Submenu } from "../../util/DB";
+import { Photos, Submenu } from "../../Context/DB";
 import { RiArrowDropRightLine } from "react-icons/ri";
 
 const submenuVariants = {
@@ -35,13 +35,13 @@ const mainMenuVariants = {
 };
 
 interface SideBarLeft {
-  IsSideBarOpened: boolean;
-  setIsSideBarOpened: (isSideBarOpened: boolean) => void;
+  IsLeftSideBarOpened: boolean;
+  setIsLeftSideBarOpened: (IsLeftSideBarOpened: boolean) => void;
 }
 
 export default function SideBarLeft({
-  IsSideBarOpened,
-  setIsSideBarOpened,
+  IsLeftSideBarOpened,
+  setIsLeftSideBarOpened,
 }: SideBarLeft) {
   const ref = useRef<HTMLDivElement>(null);
   /**
@@ -54,7 +54,7 @@ export default function SideBarLeft({
       event.target instanceof Node &&
       !ref.current.contains(event.target)
     ) {
-      setIsSideBarOpened(false);
+      setIsLeftSideBarOpened(false);
     }
   };
 
@@ -91,13 +91,13 @@ export default function SideBarLeft({
 
   return (
     <AnimatePresence mode="wait">
-      {IsSideBarOpened && (
+      {IsLeftSideBarOpened && (
         <motion.div
           key="sidebar-overlay"
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 0, x: 9000 }}
           animate={{
-            opacity: IsSideBarOpened ? 0.5 : 0,
-            x: IsSideBarOpened ? 0 : 9000,
+            opacity: IsLeftSideBarOpened ? 0.5 : 0,
+            x: IsLeftSideBarOpened ? 0 : 9000,
           }}
           exit={{
             opacity: 0,
@@ -111,9 +111,9 @@ export default function SideBarLeft({
             duration: 0.5,
             ease: "easeInOut",
           }}
-          onClick={() => setIsSideBarOpened(false)}
+          onClick={() => setIsLeftSideBarOpened(false)}
           className={`fixed top-0 left-0 right-0 bottom-0 z-30 bg-black opacity-50 ${
-            IsSideBarOpened ? "translate-x-0" : "translate-x-[-100%]"
+            IsLeftSideBarOpened ? "translate-x-0" : "translate-x-[-100%]"
           }`}
         />
       )}
@@ -122,8 +122,8 @@ export default function SideBarLeft({
         key="sidebar-content"
         initial={{ opacity: 0 }}
         animate={{
-          opacity: IsSideBarOpened ? 1 : 0,
-          x: IsSideBarOpened ? 0 : -9000,
+          opacity: IsLeftSideBarOpened ? 1 : 0,
+          x: IsLeftSideBarOpened ? 0 : -9000,
         }}
         exit={{
           opacity: 0,
@@ -139,7 +139,7 @@ export default function SideBarLeft({
         }}
         ref={ref}
         className={`w-64 md:w-80 h-screen bg-gray-950 text-gray-300 z-50 p-4 flex flex-col fixed left-0 top-0 transition-all duration-150 ${
-          IsSideBarOpened ? "left-0" : "left-[-100%]"
+          IsLeftSideBarOpened ? "left-0" : "left-[-100%]"
         } `}
       >
         {/* Header Section */}

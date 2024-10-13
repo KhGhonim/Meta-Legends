@@ -41,7 +41,7 @@ export default function SideBarRight({
   return (
     <AnimatePresence>
       <motion.div
-        key={"sideBarRight"}
+        key={"sideBar-overlay"}
         initial={{ opacity: 0 }}
         animate={{
           opacity: IsSideBarRightOpened ? 0.5 : 0,
@@ -66,7 +66,7 @@ export default function SideBarRight({
       ></motion.div>
       <motion.aside
         key={"sideBarRightContent"}
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 0, x: 9000 }}
         animate={{
           opacity: IsSideBarRightOpened ? 1 : 0,
           x: IsSideBarRightOpened ? 0 : 9000,
@@ -84,7 +84,7 @@ export default function SideBarRight({
           ease: "easeInOut",
         }}
         ref={ref}
-        className={`w-64 md:w-80 h-screen bg-gradient-to-b from-[#1a202c] to-[#130F15] text-gray-300 z-50 p-6 flex flex-col fixed top-0 transition-all duration-150 ${
+        className={`w-64 md:w-80 h-screen bg-gradient-to-b from-[#1a202c] to-[#130F15] text-gray-300 z-50 p-7 flex flex-col fixed top-0 transition-all duration-150 ${
           IsSideBarRightOpened ? "right-0" : "right-[-100%]"
         } `}
       >
@@ -95,7 +95,7 @@ export default function SideBarRight({
         </div>
 
         {/* Wallet Options */}
-        <div className="space-y-3 mb-6">
+        <div className="space-y-3 mb-3">
           <h3 className="font-semibold text-gray-200">Connect Your Wallet</h3>
           <button className="w-full justify-center flex py-4 px-2 gap-2 bg-gradient-to-r from-green-400 to-blue-500 hover:to-green-400 text-white rounded shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 glow">
             <img src={binance} alt="Binance Logo" className="w-6 h-6" />
@@ -116,7 +116,7 @@ export default function SideBarRight({
         </div>
 
         {/* NFT Marketplaces */}
-        <div className="space-y-3 mb-6">
+        <div className="space-y-3 mb-3">
           <h3 className="font-semibold text-gray-200">Explore Marketplaces</h3>
           <button className="w-full justify-center flex py-4 px-2 gap-2 bg-gradient-to-r from-teal-400 to-cyan-500 hover:to-teal-400 text-white rounded shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 glow">
             <SiOpensuse className="w-6 h-6" />
@@ -129,7 +129,7 @@ export default function SideBarRight({
         </div>
 
         {/* Game Recommendations */}
-        <div className="space-y-3 mb-6">
+        <div className="space-y-3">
           <h3 className="font-semibold text-gray-200">Recommended Games</h3>
           <Link
             to="/game1"
