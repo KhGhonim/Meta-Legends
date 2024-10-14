@@ -16,6 +16,7 @@ export default {
       rotate: {
         'y-31': '150deg',
       },
+      
 
     },
 

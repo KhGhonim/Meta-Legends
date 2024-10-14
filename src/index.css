@@ -6,14 +6,6 @@
 
 body {
   scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   font-family: "Heebo", sans-serif;
 
@@ -38,7 +30,7 @@ body {
 
 
 .little {
-  box-shadow: 0px 0px 6px -1px rgba(204,0,255,1);
+  box-shadow: 0px 0px 6px -1px rgba(204, 0, 255, 1);
   border: 2px solid #0000;
   background: linear-gradient(#131219, #131219) padding-box, linear-gradient(var(--angle),
       #7000ff,
@@ -71,32 +63,38 @@ body {
 
 .logo:hover {
   animation: glow 1.5s infinite alternate;
-  transition: filter 0.3s ease; /* Optional for smoother hover effect */
+  transition: filter 0.3s ease;
+  /* Optional for smoother hover effect */
 }
 
 @keyframes glow {
   0% {
     filter: drop-shadow(5px 1px 13px #728dee);
   }
+
   50% {
     filter: drop-shadow(5px 1px 22px #849bec);
   }
+
   100% {
     filter: drop-shadow(5px 1px 13px #728dee);
   }
 }
 
 .logo:hover {
-  filter: brightness(1.2); /* Make the logo brighter on hover */
+  filter: brightness(1.2);
+  /* Make the logo brighter on hover */
 }
 
 @keyframes rotateY {
   0% {
     transform: rotateY(0deg);
   }
+
   50% {
     transform: rotateY(35deg);
   }
+
   100% {
     transform: rotateY(0deg);
   }

@@ -98,3 +98,150 @@ export const Submenu = [
     ],
   },
 ];
+
+export const FootStepsSlider = [
+  {
+    number: 'PHASE 01',
+    date: 'October 09, 2022',
+    title: 'Mini Game Launch For Community',
+    description: 'Morbi non dignissim erat, a blandit felis. Suspendisse nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare lectus interdum.'
+  },
+
+  {
+    number: 'PHASE 02',
+    date: 'October 17, 2022',
+    title: 'Mini Game Launch For Community',
+    description: 'Morbi non dignissim erat, a blandit felis. Suspendisse nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare lectus interdum.'
+  },
+
+
+  {
+    number: 'PHASE 03',
+    date: 'October 28, 2022 ',
+    title: 'Metaverse 3.0 Launch',
+    description: 'Morbi non dignissim erat, a blandit felis. Suspendisse nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare lectus interdum.'
+  },
+
+
+  {
+    number: 'PHASE 04',
+    date: 'November 11, 2022',
+    title: 'Female Set #20 is Coming Up',
+    description: 'Morbi non dignissim erat, a blandit felis. Suspendisse nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare lectus interdum.'
+  },
+
+
+  {
+    number: 'PHASE 05',
+    date: 'November 11, 2022',
+    title: 'Female Set #20 is Coming Up',
+    description: 'Morbi non dignissim erat, a blandit felis. Suspendisse nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare lectus interdum.'
+  },
+
+
+  {
+    number: 'PHASE 06',
+    date: 'November 23, 2023',
+    title: 'Mini Game Launch For Community',
+    description: 'Morbi non dignissim erat, a blandit felis. Suspendisse nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare lectus interdum.'
+  },
+  {
+    number: 'PHASE 07',
+    date: 'January 14, 2023',
+    title: 'Mini Game Launch For Community',
+    description: 'Morbi non dignissim erat, a blandit felis. Suspendisse nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare lectus interdum.'
+  },
+  {
+    number: 'PHASE 08',
+    date: 'January 28, 2023',
+    title: 'Mini Game Launch For Community',
+    description: 'Morbi non dignissim erat, a blandit felis. Suspendisse nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare lectus interdum.'
+  },
+  {
+    number: 'PHASE 09',
+    date: 'February 12, 2023',
+    title: 'Mini Game Launch For Community',
+    description: 'Morbi non dignissim erat, a blandit felis. Suspendisse nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare lectus interdum.'
+  },
+  {
+    number: 'PHASE 10',
+    date: 'March 05, 2023',
+    title: 'Open Source Project Launch',
+    description: 'Morbi non dignissim erat, a blandit felis. Suspendisse nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare lectus interdum.'
+  },
+  {
+    number: 'PHASE 11',
+    date: 'May 23, 2023',
+    title: 'SQL Database Launch',
+    description: 'Morbi non dignissim erat, a blandit felis. Suspendisse nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare lectus interdum.'
+  },
+  {
+    number: 'PHASE 12',
+    date: 'June 12, 2023',
+    title: 'EYC 2023 Launch',
+    description: 'Morbi non dignissim erat, a blandit felis. Suspendisse nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare lectus interdum.'
+  },
+  {
+    number: 'PHASE 13',
+    date: 'August 09, 2023',
+    title: 'EYC 2023 Launch',
+    description: 'Morbi non dignissim erat, a blandit felis. Suspendisse nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare lectus interdum.'
+  },
+  {
+    number: 'PHASE 14',
+    date: 'October 30, 2023',
+    title: 'EYC 2023 Launch',
+    description: 'Morbi non dignissim erat, a blandit felis. Suspendisse nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare lectus interdum.'
+  },
+  {
+    number: 'PHASE 15',
+    date: 'February 01, 2023',
+    title: 'EYC 2023 Launch',
+    description: 'Morbi non dignissim erat, a blandit felis. Suspendisse nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare lectus interdum.'
+  },
+  {
+    number: 'PHASE 15',
+    date: 'February 01, 2023',
+    title: 'EYC 2023 Launch',
+    description: 'Morbi non dignissim erat, a blandit felis. Suspendisse nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare lectus interdum.'
+  },
+  {
+    number: 'PHASE 15',
+    date: 'February 01, 2023',
+    title: 'EYC 2023 Launch',
+    description: 'Morbi non dignissim erat, a blandit felis. Suspendisse nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare lectus interdum.'
+  },
+]
+
+export const articles = [
+  {
+    id: 1,
+    date: "August 09, 2022",
+    category: "MetaVerse",
+    comments: 4,
+    title: "Reasons Why People Use Discord",
+    image: Photo5
+  },
+  {
+    id: 2,
+    date: "August 09, 2022",
+    category: "MetaVerse",
+    comments: 4,
+    title: "Trial-By-Combat: The Death Cup"
+  },
+  {
+    id: 3,
+    date: "August 09, 2022",
+    category: "NFT",
+    comments: 4,
+    title: "Graffiti Racer Research Center #10"
+  },
+  {
+    id: 4,
+    date: "August 09, 2022",
+    category: "MetaVerse",
+    comments: 4,
+    title: "Welcome, The Dark Caller of Discord"
+  }
+
+]

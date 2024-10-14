@@ -60,7 +60,7 @@ export default function DesktopSlider() {
           {Photos?.map((character: Character, index) => (
             <SwiperSlide
               key={index}
-              className={`relative w-[500px] h-[600px]  rounded-3xl p-5 transition-all duration-500 ease-in-out transform  backdrop-blur-[250px] bg-transparent bg-opacity-30 border border-white shadow-2xl `}
+              className={`relative w-[500px] h-[600px] overflow-hidden  rounded-3xl p-5 transition-all duration-500 ease-in-out transform  backdrop-blur-[250px] bg-transparent bg-opacity-30 border border-white shadow-2xl `}
             >
               <img
                 src={character?.src}

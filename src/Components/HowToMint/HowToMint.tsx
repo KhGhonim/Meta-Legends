@@ -1,33 +1,20 @@
 import { useState } from "react";
-import CountUp, { useCountUp } from "react-countup";
 import YouTube from "react-youtube";
+import { VscDebugStart } from "react-icons/vsc";
+import YTCover from "../../assets/MiniSection/YTCover.jpg";
+import MintCard from "./MintCard";
 
 export default function HowToMint() {
   const [IsVideoPlayed, setIsVideoPlayed] = useState<boolean>(false);
+  const [hovered, setHovered] = useState(false);
+  const circleRadius = 90;
+  const circumference = 2 * Math.PI * circleRadius;
   const videoId = "ug0L5S2Qzwg";
 
-  const opts = {
-    height: "390",
-    width: "640",
-    playerVars: {
-      autoplay: 0,
-      controls: 0,
-      modestbranding: 1,
-      rel: 0,
-      showinfo: 0,
-    },
-  };
-
-  useCountUp({
-    ref: "counter",
-    end: 100,
-    enableScrollSpy: true,
-    scrollSpyOnce: true,
-  });
   return (
-    <div className="w-full h-full relative pt-20 pb-20 lg:py-32 flex flex-col lg:flex-row justify-center items-center gap-10  lg:justify-between">
+    <div className="w-full h-full relative  flex flex-col lg:flex-row justify-center items-center gap-10  lg:justify-between">
       <div className="w-full lg:w-2/5 h-full">
-        <div className="w-full h-full px-5 space-y-6">
+        <div className="w-full h-full px-5 lg:px-10 space-y-6">
           <div className="relative mb-3 ">
             <h1 className="text-xl md:text-3xl lg:text-5xl font-bold ">
               How to Mint
@@ -67,103 +54,94 @@ export default function HowToMint() {
             odio commodo at. Cras ante enim, sodales at pretium et, tempus at
             libero.
           </p>
-          <button className="CTSButton little hover:shadow-custom text-white font-extralight py-3 px-8 rounded">
-            How to Mint
-          </button>
+          <div className="w-full flex justify-center mt-5 items-center">
+            <button className="CTSButton little hover:shadow-custom text-white font-extralight py-3 px-10 rounded">
+              How to Mint
+            </button>
+          </div>
         </div>
       </div>
 
       <div className="w-full lg:w-3/5 h-full flex flex-col">
         <div className="w-full h-full bg-transparent flex gap-5 justify-center items-center  flex-wrap">
-          <div className="w-96 h-56 p-4 rounded-2xl border-[1px] border-gray-600 shadow-2xl">
-            <div className="flex flex-col bg-gray-700 bg-opacity-20 p-10 rounded-2xl w-full h-full">
-              <div
-                className="text-5xl text-center font-bold text-[#160f1a] drop-shadow-custom"
-                style={{
-                  background:
-                    "linear-gradient(to right, #944ef9, #944ef9, #d352f3)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextStroke: "4px transparent",
-                }}
-              >
-                <CountUp end={1} enableScrollSpy scrollSpyOnce />
-              </div>
-              <div className="text-base text-center text-[#ffffff80]">
-                Connect your Wallet
-              </div>
-            </div>
-          </div>
-          <div className="w-96 h-56 p-4 rounded-2xl border-[1px] border-gray-600 shadow-2xl">
-            <div className="flex flex-col bg-gray-700 bg-opacity-20 p-10 rounded-2xl w-full h-full">
-              <div
-                className="text-5xl text-center font-bold text-[#160f1a] drop-shadow-custom"
-                style={{
-                  background:
-                    "linear-gradient(to right, #944ef9, #944ef9, #d352f3)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextStroke: "4px transparent",
-                }}
-              >
-                <CountUp end={2} enableScrollSpy scrollSpyOnce />
-              </div>
-              <div className="text-base text-center text-[#ffffff80]">
-                Select Your Quantity
-              </div>
-            </div>
-          </div>
-
-          <div className="w-96 h-56 p-4 rounded-2xl border-[1px] border-gray-600 shadow-2xl">
-            <div className="flex flex-col bg-gray-700 bg-opacity-20 p-10 rounded-2xl w-full h-full">
-              <div
-                className="text-5xl text-center font-bold text-[#160f1a] drop-shadow-custom"
-                style={{
-                  background:
-                    "linear-gradient(to right, #944ef9, #944ef9, #d352f3)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextStroke: "4px transparent",
-                }}
-              >
-                <CountUp end={3} enableScrollSpy scrollSpyOnce />
-              </div>
-              <div className="text-base text-center text-[#ffffff80]">
-                Confirm The Transaction
-              </div>
-            </div>
-          </div>
-          <div className="w-96 h-56 p-4 rounded-2xl border-[1px] border-gray-600 shadow-2xl">
-            <div className="flex flex-col bg-gray-700 bg-opacity-20 p-10 rounded-2xl w-full h-full">
-              <div
-                className="text-5xl text-center font-bold text-[#160f1a] drop-shadow-custom"
-                style={{
-                  background:
-                    "linear-gradient(to right, #944ef9, #944ef9, #d352f3)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextStroke: "4px transparent",
-                }}
-              >
-                <CountUp end={4} enableScrollSpy scrollSpyOnce />
-              </div>
-              <div className="text-base text-center text-[#ffffff80]">
-                Receive Your NFT’s
-              </div>
-            </div>
-          </div>
+          <MintCard
+            name="Connect your Wallet"
+            number={1}
+          />
+          <MintCard
+            name="Select Your Quantity"
+            number={2}
+          />
+          <MintCard
+            name="Confirm The Transaction"
+            number={3}
+          />
+          <MintCard
+            name="Receive Your NFT’s"
+            number={4}
+          />
         </div>
 
-        <div className="relative w-full max-w-[640px]  aspect-video mt-11 mx-auto">
-          {!IsVideoPlayed && (
-            <div className="absolute inset-0 flex justify-center items-center">
-              <div className="absolute inset-0 bg-purple-500 rounded-full opacity-50 animate-ping"></div>
+        <div className="relative w-full max-w-2xl aspect-video max-md:mb-32 mt-10 mx-auto">
+          {!IsVideoPlayed ? (
+            <div className="relative w-full h-full">
+              <img
+                src={YTCover}
+                alt="YouTube Cover"
+                className="w-full h-full"
+              />
+              <div
+                onClick={() => setIsVideoPlayed(true)}
+                className="absolute inset-0 flex justify-center items-center cursor-pointer"
+              >
+                {/* SVG Circle for Border */}
+                <svg
+                  width="200"
+                  height="200"
+                  viewBox="0 0 200 200"
+                  className="absolute"
+                  onMouseEnter={() => setHovered(true)}
+                  onMouseLeave={() => setHovered(false)}
+                >
+                  <circle
+                    cx="100"
+                    cy="100"
+                    r={circleRadius}
+                    stroke="gray"
+                    strokeWidth="4"
+                    fill="none"
+                    strokeDasharray={circumference}
+                    strokeDashoffset={hovered ? circumference : 0}
+                    style={{
+                      transition: "stroke-dashoffset 1s ease",
+                    }}
+                  />
+                </svg>
+
+                {/* Icon */}
+                <VscDebugStart className="text-[150px] text-gray-500 " />
+              </div>
             </div>
+          ) : (
+            <YouTube
+              videoId={videoId}
+              opts={{
+                width: "100%",
+                height: "100%",
+                playerVars: {
+                  autoplay: 1,
+                  controls: 1,
+                  modestbranding: 1,
+                  rel: 1,
+                  showinfo: 1,
+                },
+              }}
+              className="absolute top-0 left-0 w-full h-full"
+              onPlay={() => setIsVideoPlayed(true)}
+              onPause={() => setIsVideoPlayed(false)}
+              onEnd={() => setIsVideoPlayed(false)}
+            />
           )}
-          <YouTube
-            videoId={videoId}
-            opts={opts}
-            className="absolute top-0 left-0 w-full h-full"
-            onPlay={() => setIsVideoPlayed(true)}
-            onPause={() => setIsVideoPlayed(false)}
-            onEnd={() => setIsVideoPlayed(false)}
-          />
         </div>
       </div>
     </div>

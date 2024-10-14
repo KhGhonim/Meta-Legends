@@ -3,6 +3,10 @@ import Header from "../../Components/Header/Header";
 import HeroSectionSlider from "../../Components/HeroSectionSlider/HeroSectionSlider";
 import SecoundHeroSection from "../../Components/SecoundHeroSection/SecoundHeroSection";
 import HowToMint from "../../Components/HowToMint/HowToMint";
+import Divider from "../../Components/Divider/Divider";
+import OurCollection from "../../Components/OurCollection/OurCollection";
+import RoadMap from "../../Components/RoadMap/RoadMap";
+import Articles from "../../Components/Articles/Articles";
 
 export default function Home() {
   return (
@@ -13,9 +17,18 @@ export default function Home() {
       <Header />
       {/* <HeroSectionVideo /> */}
       <HeroSectionSlider />
-      <InfoBar/>
+      <InfoBar />
       <SecoundHeroSection />
+      <Divider />
       <HowToMint />
+      <Divider />
+      <OurCollection />
+      <Divider />
+      <RoadMap />
+      <Divider />
+      <Articles />
+      <Divider />
+
     </div>
   );
 }

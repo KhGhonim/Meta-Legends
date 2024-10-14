@@ -19,7 +19,7 @@ export default function HeroSectionSlider() {
           IPFS.
         </h1>
 
-        <button className="CTSButton little transition-all duration-300  hover:shadow-custom text-white font-extralight py-2 px-6 rounded">Buy Now</button>
+        <button className="CTSButton little transition-all duration-300  hover:shadow-custom text-white font-extralight py-3 px-12 rounded">Buy Now</button>
       </div>
     </div>
   );
