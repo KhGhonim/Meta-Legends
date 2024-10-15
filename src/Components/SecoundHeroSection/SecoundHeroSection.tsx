@@ -2,7 +2,7 @@ import SecoundHeroSectionBGPhoto from "../../assets/MiniSection/SecoundHeroSecti
 import SecoundHeroSectionPhoto from "../../assets/MiniSection/SecoundHeroSectionPhoto.jpg";
 export default function SecoundHeroSection() {
   return (
-    <div className="w-full h-full lg:h-dvh flex flex-col lg:flex-row relative">
+    <div  id="about" className="w-full h-full lg:h-dvh flex flex-col lg:flex-row relative">
       <div className="w-full lg:w-3/5 h-full relative">
         <div className="w-full lg:w-10/12 max-md:h-dvh md:h-full z-10">
           <img

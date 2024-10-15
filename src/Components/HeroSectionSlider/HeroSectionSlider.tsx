@@ -3,7 +3,7 @@ import PhoneSlider from "./PhoneSlider/PhoneSlider";
 
 export default function HeroSectionSlider() {
   return (
-    <div className="relative min-h-screen  overflow-hidden">
+    <div id="home" className="relative min-h-screen  overflow-hidden">
       {/* Hero Section For Phone */}
       <PhoneSlider />
 
@@ -11,7 +11,7 @@ export default function HeroSectionSlider() {
       <DesktopSlider />
 
       <div className="flex flex-col items-center justify-center pb-10">
-        <h1 className="text-center max-w-3xl mx-auto pb-10 text-lg md:text-xl font-medium text-[#9ba0b8]">
+        <h1  className="text-center max-w-3xl mx-auto pb-10 text-lg md:text-xl font-medium text-[#9ba0b8]">
           {" "}
           Meta Legends represent a collection of 17,000 legends categorized by
           level of rarity and generated with hundreds of elements. The Legends

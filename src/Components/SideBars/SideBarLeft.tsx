@@ -5,20 +5,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Photos, Submenu } from "../../Context/DB";
 import { RiArrowDropRightLine } from "react-icons/ri";
 
-const submenuVariants = {
-  open: { x: 0, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } },
-  closed: {
-    x: "-100%",
-    opacity: 0,
-    transition: { duration: 0.5, ease: "easeInOut" },
-  },
-  exit: {
-    x: "-100%",
-    opacity: 0,
-    transition: { duration: 0.5, ease: "easeInOut" },
-  },
-};
-
 // Animation variants for the main menu
 const mainMenuVariants = {
   open: { x: 0, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } },
@@ -29,6 +15,20 @@ const mainMenuVariants = {
   },
   exit: {
     x: "100%",
+    opacity: 0,
+    transition: { duration: 0.5, ease: "easeInOut" },
+  },
+};
+
+const submenuVariants = {
+  open: { x: 0, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } },
+  closed: {
+    x: "-100%",
+    opacity: 0,
+    transition: { duration: 0.5, ease: "easeInOut" },
+  },
+  exit: {
+    x: "-100%",
     opacity: 0,
     transition: { duration: 0.5, ease: "easeInOut" },
   },
@@ -90,7 +90,7 @@ export default function SideBarLeft({
   }, [Photos.length]);
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence>
       {IsLeftSideBarOpened && (
         <motion.div
           key="sidebar-overlay"
@@ -101,7 +101,7 @@ export default function SideBarLeft({
           }}
           exit={{
             opacity: 0,
-            x: 900,
+            x: 9000,
             transition: {
               duration: 0.5,
               ease: "easeInOut",
@@ -112,35 +112,27 @@ export default function SideBarLeft({
             ease: "easeInOut",
           }}
           onClick={() => setIsLeftSideBarOpened(false)}
-          className={`fixed top-0 left-0 right-0 bottom-0 z-30 bg-black opacity-50 ${
-            IsLeftSideBarOpened ? "translate-x-0" : "translate-x-[-100%]"
-          }`}
+          className={`fixed top-0 left-0 right-0 bottom-0 z-30 bg-black opacity-50 `}
         />
       )}
 
       <motion.aside
         key="sidebar-content"
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 0, x: -9000 }}
         animate={{
           opacity: IsLeftSideBarOpened ? 1 : 0,
           x: IsLeftSideBarOpened ? 0 : -9000,
         }}
         exit={{
           opacity: 0,
-          x: -900,
-          transition: {
-            duration: 0.8,
-            ease: "easeInOut",
-          },
+          x: -9000,
         }}
         transition={{
           duration: 0.8,
           ease: "easeInOut",
         }}
         ref={ref}
-        className={`w-64 md:w-80 h-screen bg-gray-950 text-gray-300 z-50 p-4 flex flex-col fixed left-0 top-0 transition-all duration-150 ${
-          IsLeftSideBarOpened ? "left-0" : "left-[-100%]"
-        } `}
+        className={`w-64 md:w-80 h-screen bg-gray-950 text-gray-300 z-50 p-4 flex flex-col fixed left-0 top-0 transition-all duration-300  `}
       >
         {/* Header Section */}
         <div className="flex flex-col items-center mb-8">
@@ -173,7 +165,7 @@ export default function SideBarLeft({
         </div>
 
         {/* Navigation Links */}
-        <nav className="flex-grow relative flex flex-col">
+        <nav className="flex-grow relative flex flex-col overflow-hidden">
           {IsSubMenuOpened ? (
             <motion.ul
               key="submenu"
@@ -205,27 +197,27 @@ export default function SideBarLeft({
               key="main-menu"
               className="space-y-3 absolute top-0 left-0 w-full"
               variants={mainMenuVariants}
-              initial="open"
+              initial={IsSubMenuOpened ? "open" : "closed"}
               animate="open"
               exit="closed"
             >
-              {Submenu.map((item, index) => (
-                <li key={`menu-item-${item.Name}-${index}`}>
+              {Submenu?.map((item, index) => (
+                <li key={`menu-item-${item?.Name}-${index}`}>
                   <Link
-                    to={item.Link}
-                    className={item.class}
+                    to={item?.Link}
+                    className={item?.class}
                     onClick={() => {
-                      if (item.subItems) {
+                      if (item?.subItems) {
                         setIsSubMenuOpened(true);
-                        setSubMenuItems(item.subItems);
+                        setSubMenuItems(item?.subItems);
                       }
                     }}
                   >
-                    <item.Icon className={item.iconClass} />
-                    <span className="font-semibold">{item.Name}</span>
-                    {item.showArrow && (
+                    <item.Icon className={item?.iconClass} />
+                    <span className="font-semibold">{item?.Name}</span>
+                    {item?.showArrow && (
                       <span>
-                        <RiArrowDropRightLine className={item.iconClass} />
+                        <RiArrowDropRightLine className={item?.iconClass} />
                       </span>
                     )}
                   </Link>

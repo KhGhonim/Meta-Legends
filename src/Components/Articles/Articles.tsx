@@ -11,8 +11,8 @@ interface Article {
 
 export default function Articles() {
   return (
-    <section className=" text-white p-3 md:p-5 lg:p-8">
-      <div className="max-w-7xl mx-auto lg:px-5">
+    <section id="blog" className=" text-white p-3 md:p-5 lg:p-8">
+      <div  className="max-w-7xl mx-auto lg:px-5">
         <div className="flex flex-row gap-6">
           <div className=" w-full   md:w-3/6 h-full flex flex-col">
             <div

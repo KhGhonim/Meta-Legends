@@ -28,8 +28,8 @@ export default function OurCollection() {
   }, []);
 
   return (
-    <div className="w-full h-full py-10">
-            <div className="container mx-auto  pb-20 text-center">
+    <div id="collection" className="w-full h-full py-10">
+      <div className="container mx-auto  pb-20 text-center">
         <div className="relative">
           <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold ">
             OUR COLLECTION
@@ -95,8 +95,9 @@ export default function OurCollection() {
           IPFS.
         </h1>
 
-        <button className="CTSButton little transition-all duration-300  hover:shadow-custom text-white font-extralight py-3 px-12 rounded">Buy Now</button>
-
+        <button className="CTSButton little transition-all duration-300  hover:shadow-custom text-white font-extralight py-3 px-12 rounded">
+          Buy Now
+        </button>
       </div>
     </div>
   );

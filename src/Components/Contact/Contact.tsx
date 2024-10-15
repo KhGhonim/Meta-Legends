@@ -2,7 +2,7 @@ import ContactUsForm from "./ContactUsForm";
 
 export default function Contact() {
   return (
-    <section className="min-h-screen bg-transparent p-8">
+    <section id="contact" className="min-h-screen bg-transparent p-8">
       <div className="max-w-6xl mx-auto">
         <div className="relative mb-20">
           <h1 className="text-4xl md:text-6xl lg:text-7xl text-center font-bold ">

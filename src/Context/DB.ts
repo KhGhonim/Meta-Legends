@@ -22,11 +22,11 @@ import {
   FaImages,
 } from "react-icons/fa";
 export const HeaderNav = [
-  { Name: "Home", Link: "/" },
-  { Name: "About", Link: "/about" },
-  { Name: "Collection", Link: "/collection" },
-  { Name: "Blog", Link: "/blog" },
-  { Name: "Contact", Link: "/contact" },
+  { Name: "Home", Link: "#home" },
+  { Name: "About", Link: "#about" },
+  { Name: "Collection", Link: "#collection" },
+  { Name: "Blog", Link: "#blog" },
+  { Name: "Contact", Link: "#contact" },
 ];
 
 export const Photos = [
@@ -63,8 +63,7 @@ export const Submenu = [
       { Name: "Bended Carousel", Link: "/bended-carousel" },
       { Name: "Video Background", Link: "/video-background" },
       { Name: "Water Effect", Link: "/water-effect" },
-      { Name: "Simple Carousel", Link: "/simple-carousel" },
-      { Name: "Fullscreen Slider", Link: "/fullscreen-slider" },
+
     ]
   },
   {
@@ -200,13 +199,13 @@ export const FootStepsSlider = [
     description: 'Morbi non dignissim erat, a blandit felis. Suspendisse nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare lectus interdum.'
   },
   {
-    number: 'PHASE 15',
+    number: 'PHASE 16',
     date: 'February 01, 2023',
     title: 'EYC 2023 Launch',
     description: 'Morbi non dignissim erat, a blandit felis. Suspendisse nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare lectus interdum.'
   },
   {
-    number: 'PHASE 15',
+    number: 'PHASE 17',
     date: 'February 01, 2023',
     title: 'EYC 2023 Launch',
     description: 'Morbi non dignissim erat, a blandit felis. Suspendisse nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare lectus interdum.'

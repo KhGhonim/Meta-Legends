@@ -35,7 +35,6 @@ export default function Slider() {
             delay: 2500,
             disableOnInteraction: false,
           }}
-          loop={true}
           modules={[Autoplay]}
           spaceBetween={100}
           onSlideChange={(swiper) => {

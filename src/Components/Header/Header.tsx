@@ -1,16 +1,53 @@
 import { TiThMenu } from "react-icons/ti";
 import logo from "../../assets/logo.svg";
-import { HeaderNav } from "../../Context/DB";
+import { HeaderNav, Submenu } from "../../Context/DB";
 import { useEffect, useRef, useState } from "react";
-import { MdArrowRight, MdClose } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { MdClose, MdKeyboardArrowRight } from "react-icons/md";
 import SideBarLeft from "../SideBars/SideBarLeft";
 import SideBarRight from "../SideBars/SideBarRight";
+import { useNavigate } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+
+const mainMenuVariants = {
+  open: { x: 0, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } },
+  closed: {
+    x: "100%", // Exits to the right
+    opacity: 0,
+    transition: { duration: 0.5, ease: "easeInOut" },
+  },
+  exit: {
+    x: "100%", // Exits to the right
+    opacity: 0,
+    transition: { duration: 0.5, ease: "easeInOut" },
+  },
+};
+
+const submenuVariants = {
+  open: { x: 0, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } },
+  closed: {
+    x: "-100%", // Entering from the left
+    opacity: 0,
+    transition: { duration: 0.5, ease: "easeInOut" },
+  },
+  exit: {
+    x: "-100%", // Exits to the left
+    opacity: 0,
+    transition: { duration: 0.5, ease: "easeInOut" },
+  },
+};
 
 export default function Header() {
   const [headerPosition, setHeaderPosition] = useState<boolean>(false);
   const [IsMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [IsLeftSideBarOpened, setIsLeftSideBarOpened] = useState<boolean>(false);
+  const [subMenuItems, setSubMenuItems] = useState<
+    { Name: string; Link: string }[] | undefined
+  >(undefined);
+  const [HumbergerMenuContent, setHumbergerMenuContent] =
+    useState<boolean>(false);
+  const [IsLeftSideBarOpened, setIsLeftSideBarOpened] =
+    useState<boolean>(false);
+  console.log(`Show Content of ${HumbergerMenuContent}`);
+
   const [IsSideBarRightOpened, setIsSideBarRightOpened] =
     useState<boolean>(false);
   useEffect(() => {
@@ -38,8 +75,11 @@ export default function Header() {
       !ref.current.contains(event.target)
     ) {
       setIsMenuOpen(false);
+      setHumbergerMenuContent(false);
     }
   };
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
@@ -84,15 +124,15 @@ export default function Header() {
         </div>
         <nav className="hidden lg:flex space-x-10">
           {HeaderNav?.map((item: { Name: string; Link: string }, i: number) => (
-            <Link
+            <a
               key={i}
-              to={item.Link}
+              href={item.Link}
               className="text-white hover:text-purple-500 transition-all duration-500 relative group"
             >
               {item.Name}
 
               <span className="absolute bottom-0 left-0 h-0.5 w-full scale-x-0 transform bg-purple-500 transition-transform duration-500 group-hover:scale-x-100"></span>
-            </Link>
+            </a>
           ))}
         </nav>
         <button
@@ -164,14 +204,15 @@ bg-gradient-to-r from-[rgb(27,17,38)] to-[rgb(24,17,36)] border-b-[0.5px] border
           </div>
 
           <div className="bg-black rounded-full p-3 cursor-pointer little   hover:shadow-custom transition-all duration-500">
-            <span
+            <div
               onClick={() => {
                 setIsMenuOpen(!IsMenuOpen);
+                setHumbergerMenuContent(!HumbergerMenuContent);
               }}
               className="text-white text-xl cursor-pointer"
             >
               {IsMenuOpen ? <MdClose /> : <TiThMenu />}
-            </span>
+            </div>
 
             <div
               className={`absolute top-full right-0 w-full bg-[#1B121D] text-white z-10 
@@ -182,24 +223,66 @@ bg-gradient-to-r from-[rgb(27,17,38)] to-[rgb(24,17,36)] border-b-[0.5px] border
       } 
       transition-all duration-700 ease-in-out`}
             >
-              <nav ref={ref} className="flex flex-col space-y-6 py-3 px-8">
-                {HeaderNav?.map(
-                  (item: { Name: string; Link: string }, i: number) => (
-                    <Link
-                      key={i}
-                      to={item.Link}
-                      className="text-[#ddd]/70 flex items-center hover:text-purple-500 transition-all duration-500 relative group"
-                    >
-                      <span className="text-white group-hover:text-purple-500 transition-all duration-500 group-hover:translate-x-3">
-                        <MdArrowRight />
-                      </span>
-                      <span className="relative">
-                        <span className="absolute bottom-0 left-0 h-0.5 w-full scale-x-0 transform bg-purple-500 transition-transform duration-500 group-hover:scale-x-100"></span>
-                        <span className="relative z-10 px-4">{item.Name}</span>
-                      </span>
-                    </Link>
-                  )
-                )}
+              <nav ref={ref} className="flex flex-col space-y-6 py-7 px-8">
+                <AnimatePresence mode="wait">
+                  {HumbergerMenuContent
+                    ? Submenu?.map(
+                        (
+                          item: {
+                            Name: string;
+                            Link: string;
+                            showArrow: boolean;
+                            subItems?: { Name: string; Link: string }[];
+                          },
+                          i: number
+                        ) => (
+                          <motion.div
+                            key={i}
+                            onClick={() => {
+                              navigate(item.Link);
+                              if (item?.subItems) {
+                                setSubMenuItems(item?.subItems);
+                                setHumbergerMenuContent(false);
+                              }
+                            }}
+                            variants={mainMenuVariants}
+                            initial={IsMenuOpen ? "closed" : "open"}
+                            animate="open"
+                            exit="exit"
+                            className="text-[#ddd]/70 group cursor-pointer flex items-center hover:text-purple-500 transition-all duration-500 relative group"
+                          >
+                            {item.subItems && item.showArrow && (
+                              <span className="group-hover:translate-x-3 transition-all duration-500">
+                                {" "}
+                                <MdKeyboardArrowRight />
+                              </span>
+                            )}
+                            <span className="relative">
+                              <span className="relative z-10 px-4">
+                                {item.Name}
+                              </span>
+                            </span>
+                          </motion.div>
+                        )
+                      )
+                    : subMenuItems?.map(
+                        (item: { Name: string; Link: string }, i: number) => (
+                          <motion.div
+                            key={i}
+                            variants={submenuVariants}
+                            initial={"closed"}
+                            animate="open"
+                            exit="exit"
+                            onClick={() => navigate(item.Link)}
+                            className="text-[#ddd]/70 group flex cursor-pointer items-center hover:text-purple-500 transition-all duration-500 relative group"
+                          >
+                            <div className="relative z-10 px-4">
+                              {item.Name}
+                            </div>
+                          </motion.div>
+                        )
+                      )}
+                </AnimatePresence>
               </nav>
             </div>
           </div>

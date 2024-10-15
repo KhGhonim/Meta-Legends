@@ -30,7 +30,7 @@ export default function Home() {
       <Divider />
       <Articles />
       <Divider />
-      <Contact/>
+      <Contact />
       <Footer />
     </div>
   );
