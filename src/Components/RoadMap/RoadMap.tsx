@@ -2,7 +2,7 @@ import Slider from "./Slider";
 
 export default function RoadMap() {
   return (
-    <div className="min-h-screen px-6 md:px-12 lg:px-24 ">
+    <div className="h-full px-6 md:px-12 lg:px-24 ">
       <div className="container mx-auto  pb-20 text-center">
         <div className="relative">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold ">

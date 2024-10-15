@@ -2,6 +2,7 @@ import { FootStepsSlider } from "../../Context/DB";
 import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Steps from "../../assets/MiniSection/roadmap.png";
+import { Autoplay } from "swiper/modules";
 
 export default function Slider() {
   const [footsteps, setFootsteps] = useState(1);
@@ -30,8 +31,13 @@ export default function Slider() {
             768: { slidesPerView: 2, spaceBetween: 10 },
             1024: { slidesPerView: 3, spaceBetween: 0 },
           }}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          modules={[Autoplay]}
           spaceBetween={100}
-        
           onSlideChange={(swiper) => {
             const currentIndex = swiper.activeIndex;
             const previousIndex = ref.current;
@@ -43,7 +49,9 @@ export default function Slider() {
               // Moving backward, decrement footsteps (but not below 1)
               setFootsteps((prev) => Math.max(1, prev - 1));
             }
-
+            if (swiper.activeIndex === 0 && swiper.isBeginning) {
+              setFootsteps(1); // Reset footsteps to 1 when it loops back to the start
+            }
             // Update the previous index reference
             ref.current = currentIndex;
           }}
@@ -52,10 +60,10 @@ export default function Slider() {
           {/* Add your slides here */}
           {FootStepsSlider.map((slider, i) => (
             <SwiperSlide className="w-full relative overflow-visible " key={i}>
-              <div className="absolute -top-2 left-8 w-4 h-4 bg-purple-600 rounded-full shadow-lg transform translate-x-full flex items-center justify-center">
+              <div className="absolute top-1 left-8 w-4 h-4 bg-purple-600 rounded-full shadow-lg transform -translate-y-1/2 translate-x-full flex items-center justify-center">
                 <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
               </div>
-              <div className="w-full mb-10 border border-[#ffffff1a]  "></div>
+              <div className="w-full mb-10 h-1.5 border-b-4 border-[#ffffff1a]"></div>
 
               <div className="w-full h-full lg:w-80 lg:h-96 rounded-2xl border-[1px] border-gray-600 shadow-2xl ">
                 <div className="bg-gray-700 bg-opacity-20 w-32 h-10 rounded-br-2xl rounded-tl-2xl">

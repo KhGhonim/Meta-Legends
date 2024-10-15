@@ -68,12 +68,12 @@ export default function Articles() {
                     </span>
                   </div>
                   <h2 className="text-xl font-bold mb-4">{article?.title}</h2>
-                  <div className="flex flex-row items-center group cursor-pointer py-1 px-2 ">
+                  <div className="flex flex-row items-center group cursor-pointer py-1 px-2">
                     <div
-                      className={`w-8 group-hover:w-16 transition-all duration-500  transform h-full border-[#dddddd6d] group-hover:border-[#ffffff] border-dotted border-[1px] mr-2`}
+                      className={`w-8 group-hover:w-16 transition-all duration-500 transform h-full border-[#dddddd6d] group-hover:border-[#ffffff] border-dotted border-[1px] mr-2`}
                     ></div>
 
-                    <p className="hidden group-hover:block hover:text-purple-700 h-10 transition-all duration-500 text-gray-500 text-xs">
+                    <p className="opacity-0 group-hover:opacity-100 hover:text-purple-500 group-hover:scale-100 transition-all duration-500 text-gray-500 text-xs">
                       Read More
                     </p>
                   </div>

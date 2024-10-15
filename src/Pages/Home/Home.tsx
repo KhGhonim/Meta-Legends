@@ -7,6 +7,8 @@ import Divider from "../../Components/Divider/Divider";
 import OurCollection from "../../Components/OurCollection/OurCollection";
 import RoadMap from "../../Components/RoadMap/RoadMap";
 import Articles from "../../Components/Articles/Articles";
+import Contact from "../../Components/Contact/Contact";
+import Footer from "../../Components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -28,7 +30,8 @@ export default function Home() {
       <Divider />
       <Articles />
       <Divider />
-
+      <Contact/>
+      <Footer />
     </div>
   );
 }
