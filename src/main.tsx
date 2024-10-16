@@ -13,17 +13,23 @@ import Home from "./Pages/Home/Home";
 import Contact from "./Pages/Contact/Contact";
 import Blog from "./Pages/Blog/Blog";
 import Collection from "./Pages/Collection/Collection";
-import About from "./Pages/About/About";
+import Mint from "./Pages/Mint/Mint";
 import ErrorNotFound from "./Pages/ErrorNotFound/ErrorNotFound";
+import ComingSoon from "./Pages/ComingSoon/ComingSoon";
+import Protected from "./Pages/Protected/Protected";
+import SearchNotFound from "./Pages/SearchNotFound/SearchNotFound";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index element={<Home />} />
-      <Route path="/about" element={<About />} />
+      <Route path="/mint" element={<Mint />} />
       <Route path="/collection" element={<Collection />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/soon" element={<ComingSoon />} />
+      <Route path="/protected" element={<Protected />} />
+      <Route path="/search-no-results" element={<SearchNotFound />} />
       <Route path="/*" element={<ErrorNotFound />} />
 
       {/* ... etc. */}

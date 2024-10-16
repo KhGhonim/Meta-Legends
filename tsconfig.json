@@ -4,7 +4,7 @@
     "module": "ESNext",                   // ES module system
     "moduleResolution": "node",           // Use Node's module resolution strategy
     "jsx": "react-jsx",                   // Enable JSX for React
-    "baseUrl": ".",                       // Base URL is the root of the project
+    "baseUrl": "./",                       // Base URL is the root of the project
     "resolveJsonModule": true,            // Allow importing JSON modules
     "allowSyntheticDefaultImports": true, // Enable default imports for non-ES modules
     "esModuleInterop": true,              // Interoperability between ES and CommonJS modules

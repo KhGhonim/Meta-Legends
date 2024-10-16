@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { MdClose, MdKeyboardArrowRight } from "react-icons/md";
 import SideBarLeft from "../SideBars/SideBarLeft";
 import SideBarRight from "../SideBars/SideBarRight";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 const mainMenuVariants = {
@@ -114,13 +114,13 @@ export default function Header() {
               {IsLeftSideBarOpened ? <MdClose /> : <TiThMenu />}
             </span>
           </div>
-          <div className="text-white ml-5">
+          <Link to={"/"} className="text-white ml-5">
             <img
               src={logo}
               alt="logo"
               className="w-36 ml-4 logo transition-all duration-500"
             />
-          </div>
+          </Link>
         </div>
         <nav className="hidden lg:flex space-x-10">
           {HeaderNav?.map((item: { Name: string; Link: string }, i: number) => (
@@ -193,14 +193,14 @@ bg-gradient-to-r from-[rgb(27,17,38)] to-[rgb(24,17,36)] border-b-[0.5px] border
       px-4 py-4 flex items-center justify-between relative z-20`}
         >
           <div className="flex items-center">
-            <div className="text-white ml-5">
+            <Link to={"/"} className="text-white ml-5">
               <img
                 src={logo}
                 alt="logo"
                 className="w-32 ml-3 logo transition-all duration-500"
                 loading="lazy"
               />
-            </div>
+            </Link>
           </div>
 
           <div className="bg-black rounded-full p-3 cursor-pointer little   hover:shadow-custom transition-all duration-500">
