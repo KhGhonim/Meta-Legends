@@ -12,7 +12,7 @@ export default function FilterSection() {
       activeFilters.length === 0 || activeFilters.includes(product.catagory)
     );
   });
-  const contentRefs = useRef([]);
+  const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const toggleAccordion = (index: number) => {
     setOpenAccordion(openAccordion === index ? null : index);
