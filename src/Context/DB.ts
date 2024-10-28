@@ -1,3 +1,9 @@
+import {
+  FaBookOpen,
+  FaDollarSign,
+  FaHome,
+  FaImages,
+} from "react-icons/fa";
 import Photo1 from "../assets/MiniSection/1.jpg";
 import Photo2 from "../assets/MiniSection/2.jpg";
 import Photo3 from "../assets/MiniSection/3.jpg";
@@ -33,12 +39,6 @@ import Photo31 from "../assets/MiniSection/30.avif"
 
 
 
-import {
-  FaBookOpen,
-  FaDollarSign,
-  FaHome,
-  FaImages,
-} from "react-icons/fa";
 export const HeaderNav = [
   { Name: "Home", Link: "#home" },
   { Name: "About", Link: "#about" },
@@ -94,7 +94,7 @@ export const Submenu = [
   },
   {
     Name: "Collections",
-    Link: "/collectiona",
+    Link: "/collection",
     class: "flex items-center gap-3 p-3 rounded-xl bg-gray-800 hover:bg-pink-600 transition-all duration-300 text-white hover:shadow-lg",
     iconClass: "w-5 h-5 text-pink-400",
     Icon: FaImages,
@@ -505,4 +505,178 @@ export const articlesForBlog = [
     date: "September 25, 2023",
     comments: 7
   }
+];
+
+export const products = [
+  {
+    id: 4588,
+    name: "Meta Legends #4588",
+    image: Photo1,
+    catagory: "Human",
+  },
+  {
+    id: 4587,
+    name: "Meta Legends #4587",
+    image: Photo2,
+    catagory: "Spirit",
+
+  },
+  {
+    id: 4582,
+    name: "Meta Legends #4582",
+    image: Photo3,
+    catagory: "Fire",
+
+  },
+  {
+    id: 4581,
+    name: "Meta Legends #4581",
+    image: Photo4,
+    catagory: "Sand",
+
+  },
+  {
+    id: 4580,
+    name: "Meta Legends #4580",
+    image: Photo5,
+    catagory: "Fireflies",
+
+  },
+  {
+    id: 4578,
+    name: "Meta Legends #4578",
+    image: Photo6,
+    catagory: "Butterfly",
+
+  },
+  {
+    id: 4577,
+    name: "Meta Legends #4577",
+    image: Photo7,
+    catagory: "Blue Kimono",
+
+  },
+  {
+    id: 4576,
+    name: "Meta Legends #4576",
+    image: Photo8,
+    catagory: "Maroon Yukata",
+
+  },
+  {
+    id: 4575,
+    name: "Meta Legends #4575",
+    image: Photo9,
+    catagory: "Turquoise Kimono",
+  },
+  {
+    id: 4574,
+    name: "Meta Legends #4574",
+    image: Photo10,
+    catagory: "Black",
+
+  },
+  {
+    id: 4573,
+    name: "Meta Legends #4573",
+    image: Photo11,
+    catagory: "Green",
+
+  },
+  {
+    id: 4572,
+    name: "Meta Legends #4572",
+    image: Photo12,
+    catagory: "Red",
+  },
+  {
+    id: 4571,
+    name: "Meta Legends #4571",
+    image: Photo13,
+  },
+  {
+    id: 4570,
+    name: "Meta Legends #4570",
+    image: Photo14,
+    catagory: "Sleepy",
+
+  },
+  {
+    id: 4569,
+    name: "Meta Legends #4569",
+    image: Photo15,
+    catagory: "Open",
+
+  },
+  {
+    id: 4568,
+    name: "Meta Legends #4568",
+    image: Photo16,
+    catagory: "Shrink",
+
+  },
+  {
+    id: 4567,
+    name: "Meta Legends #4567",
+    image: Photo17,
+    catagory: "Smile",
+
+  },
+  {
+    id: 4566,
+    name: "Meta Legends #4566",
+    image: Photo18,
+    catagory: "Laugh",
+
+  },
+  {
+    id: 4565,
+    name: "Meta Legends #4565",
+    image: Photo19,
+    catagory: "Towel",
+
+  },
+  {
+    id: 4564,
+    name: "Meta Legends #4564",
+    image: Photo20,
+    catagory: "Horn",
+
+  },
+  {
+    id: 4563,
+    name: "Meta Legends #4563",
+    image: Photo21,
+  },
+  {
+    id: 4562,
+    name: "Meta Legends #4562",
+    image: Photo22,
+    catagory: "Crown",
+
+  }
+
+];
+
+export const filterCategories = [
+  { name: "Type", options: ["Human", "Spirit", "Fire", "Sand"] },
+  {
+    name: "Species",
+    options: ["Fireflies", "Butterfly", "Fox Fire", "Smoke", "Sakura", "Fire"],
+  },
+  {
+    name: "Clothes",
+    options: [
+      "Light Kimono",
+      "Maroon Yukata",
+      "Blue Kimono",
+      "Green Yukata",
+      "Turquoise Kimono",
+      "Black Yukata",
+    ],
+  },
+  { name: "Hair", options: ["Red", "Black", "Yellow", "Green"] },
+  { name: "Eyes", options: ["Closed", "Open", "Cry", "Sleepy"] },
+  { name: "Mouth", options: ["Shocked", "Smile", "Shrink", "Laugh"] },
+  { name: "Nick", options: ["Towel", "Horn", "Tiger", "Crown"] },
 ];
