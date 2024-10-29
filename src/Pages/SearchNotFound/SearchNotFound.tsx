@@ -34,9 +34,9 @@ export default function SearchNotFound() {
         <input
           type="text"
           placeholder="Search Here..."
-          className="w-60 border text-white z-50 bg-transparent border-[#ddd] px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+          className="w-60 border text-white z-20 bg-transparent border-[#ddd] px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
         />
-        <button className="CTSButton little z-50 text-white flex items-center justify-center  px-10 py-2 rounded-md">
+        <button className="CTSButton little z-20 text-white flex items-center justify-center  px-10 py-2 rounded-md">
           <FaSearch />
         </button>
       </div>

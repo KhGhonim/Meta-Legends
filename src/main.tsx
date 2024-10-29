@@ -18,6 +18,7 @@ import ErrorNotFound from "./Pages/ErrorNotFound/ErrorNotFound";
 import ComingSoon from "./Pages/ComingSoon/ComingSoon";
 import Protected from "./Pages/Protected/Protected";
 import SearchNotFound from "./Pages/SearchNotFound/SearchNotFound";
+import ThreeDCarousel from "./Pages/ThreeDCarousel/ThreeDCarousel";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,6 +30,7 @@ const router = createBrowserRouter(
       <Route path="/contact" element={<Contact />} />
       <Route path="/soon" element={<ComingSoon />} />
       <Route path="/protected" element={<Protected />} />
+      <Route path="/3d-carousel" element={<ThreeDCarousel />} />
       <Route path="/search-no-results" element={<SearchNotFound />} />
       <Route path="/*" element={<ErrorNotFound />} />
 

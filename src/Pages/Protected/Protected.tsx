@@ -27,9 +27,9 @@ export default function Protected() {
         <input
           type="email"
           placeholder="Email"
-          className="w-56 border text-white z-50 bg-transparent border-[#ddd] px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+          className="w-56 border text-white z-20 bg-transparent border-[#ddd] px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
         />
-        <button className="CTSButton little z-50 text-white  px-5 py-2 rounded-md">
+        <button className="CTSButton little z-20 text-white  px-5 py-2 rounded-md">
           Authenticate
         </button>
       </div>

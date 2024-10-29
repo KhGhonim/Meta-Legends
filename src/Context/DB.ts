@@ -65,6 +65,20 @@ export const Photos = [
   { src: Photo15, alt: "Photo15" },
   { src: Photo16, alt: "Photo16" },
   { src: Photo17, alt: "Photo17" },
+  { src: Photo18, alt: "Photo18" },
+  { src: Photo19, alt: "Photo19" },
+  { src: Photo20, alt: "Photo20" },
+  { src: Photo21, alt: "Photo21" },
+  { src: Photo22, alt: "Photo22" },
+  { src: Photo23, alt: "Photo23" },
+  { src: Photo24, alt: "Photo24" },
+  { src: Photo25, alt: "Photo25" },
+  { src: Photo26, alt: "Photo26" },
+  { src: Photo27, alt: "Photo27" },
+  { src: Photo28, alt: "Photo28" },
+  { src: Photo29, alt: "Photo29" },
+  { src: Photo30, alt: "Photo30" },
+  { src: Photo31, alt: "Photo31" },
 ];
 
 
@@ -102,7 +116,7 @@ export const Submenu = [
   },
   {
     Name: "Pages",
-    Link: "/",
+    Link: "#",
     class: "flex items-center gap-3 p-3 rounded-xl group bg-gray-800 hover:bg-yellow-600 transition-all duration-300 text-white hover:shadow-lg",
     iconClass: "w-5 h-5 text-yellow-400 group-hover:text-yellow-100 group-hover:translate-x-1 transition-all duration-300",
     Icon: FaBookOpen,

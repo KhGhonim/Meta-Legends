@@ -106,3 +106,22 @@ body {
 .rotateY {
   animation: rotateY 2s ease-in-out;
 }
+
+input[type="checkbox"]::after {
+  content: "";
+  display: block;
+  width: 0.25rem;
+  height: 0.5rem;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 2px;
+  left: 7px;
+  opacity: 0;
+}
+
+input[type="checkbox"]:checked::after {
+  opacity: 1;
+}
+
