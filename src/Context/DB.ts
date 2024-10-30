@@ -91,9 +91,7 @@ export const Submenu = [
     Icon: FaHome,
     showArrow: true, // Added property for arrow visibility
     subItems: [ // Added submenu items
-      { Name: "3D Carousel", Link: "/3d-carousel" },
-      { Name: "Bended Carousel", Link: "/bended-carousel" },
-      { Name: "Video Background", Link: "/video-background" },
+      { Name: "Bended Carousel with Video Background", Link: "/bended-carousel" },
       { Name: "Water Effect", Link: "/water-effect" },
 
     ]

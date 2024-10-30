@@ -19,6 +19,7 @@ import ComingSoon from "./Pages/ComingSoon/ComingSoon";
 import Protected from "./Pages/Protected/Protected";
 import SearchNotFound from "./Pages/SearchNotFound/SearchNotFound";
 import ThreeDCarousel from "./Pages/ThreeDCarousel/ThreeDCarousel";
+import WFCarousel from "./Pages/WFCarousel/WFCarousel";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,7 +31,8 @@ const router = createBrowserRouter(
       <Route path="/contact" element={<Contact />} />
       <Route path="/soon" element={<ComingSoon />} />
       <Route path="/protected" element={<Protected />} />
-      <Route path="/3d-carousel" element={<ThreeDCarousel />} />
+      <Route path="/bended-carousel" element={<ThreeDCarousel />} />
+      <Route path="/water-effect" element={<WFCarousel />} />
       <Route path="/search-no-results" element={<SearchNotFound />} />
       <Route path="/*" element={<ErrorNotFound />} />
 
