@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { articlesForBlog } from "../../Context/DB";
+import { Link } from "react-router-dom";
 
 interface Article {
   id: number;
@@ -43,7 +44,8 @@ export default function ArticlesForBlogs() {
       <div className=" w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-8 px-3 md:px-10 lg:px-20">
         {currentPhotos?.map((article: Article, i: number) => {
           return (
-            <div
+            <Link
+              to={`/articles/${article?.id}`}
               key={i}
               className={` z-30 hover:shadow-little-shadow transition-all duration-500  rounded-lg h-full w-full p-5 lg:p-10`}
             >
@@ -75,7 +77,7 @@ export default function ArticlesForBlogs() {
                   Read More
                 </p>
               </div>
-            </div>
+            </Link>
           );
         })}
 

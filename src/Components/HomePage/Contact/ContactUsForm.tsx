@@ -90,7 +90,7 @@ export default function ContactUsForm() {
           className="w-full p-4 z-50 bg-transparent border text-white border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300 min-h-[150px]"
         />
       </div>
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center z-30 space-x-2">
         <input
           type="checkbox"
           name="terms"
@@ -98,16 +98,17 @@ export default function ContactUsForm() {
           required
           id="terms"
           className="appearance-none h-5 w-5 border border-gray-300 rounded-sm checked:bg-purple-600 checked:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500 cursor-pointer relative"
-          />
+        />
         <label htmlFor="terms" className="text-sm text-gray-600">
           I agree to receive emails and allow tracking to improve my experience.
         </label>
       </div>
       <button
         type="submit"
-        className=" CTSButton little z-30 text-white cursor-pointer py-3 px-6 rounded-lg w-56 mx-auto shadow-lg transition-all duration-300"
+        disabled={state.submitting}
+        className=" CTSButton little z-50 text-white cursor-pointer py-3 px-6 rounded-lg w-56 mx-auto shadow-lg transition-all duration-300"
       >
-        SEND MESSAGE
+        {state.submitting ? "Sending..." : "Send Message"}
       </button>
     </form>
   );

@@ -3,6 +3,7 @@ import {
   FaDollarSign,
   FaHome,
   FaImages,
+  FaInfoCircle,
 } from "react-icons/fa";
 import Photo1 from "../assets/MiniSection/1.jpg";
 import Photo2 from "../assets/MiniSection/2.jpg";
@@ -127,6 +128,14 @@ export const Submenu = [
       { Name: "Search No Results", Link: "/search-no-results" },
       { Name: "Articles", Link: "/blog" },
     ],
+  },
+  {
+    Name: "Orginization",
+    Link: "/orgin",
+    class: "flex items-center gap-3 p-3 rounded-xl group bg-gray-800 hover:bg-red-600 transition-all duration-300 text-white hover:shadow-lg",
+    iconClass: "w-5 h-5 text-red-400 group-hover:text-red-100 group-hover:translate-x-1 transition-all duration-300",
+    Icon: FaInfoCircle,
+    showArrow: true, // Added property for arrow visibility
   },
 ];
 
@@ -693,3 +702,14 @@ export const filterCategories = [
   { name: "Mouth", options: ["Shocked", "Smile", "Shrink", "Laugh"] },
   { name: "Nick", options: ["Towel", "Horn", "Tiger", "Crown"] },
 ];
+
+export const categories = [
+  { name: "LIFESTYLE", count: 77 },
+  { name: "TRAVEL", count: 48 },
+  { name: "CLOTHING", count: 31 },
+  { name: "FOOD", count: 29 },
+  { name: "RELATIONSHIPS", count: 33 },
+  { name: "BEAUTY", count: 24 },
+  { name: "INTERIOR", count: 53 },
+  { name: "HEALTH & WELLESS", count: 42 },
+]

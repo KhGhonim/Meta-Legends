@@ -5,7 +5,7 @@ import ArticlesForBlogs from "../../Components/Blog/ArticlesForBlogs";
 export default function Blog() {
   return (
     <div className="w-full h-full pt-20">
-      <div className="relative flex flex-col text-center my-10 w-full h-full">
+      <div id="blog" className="relative flex flex-col text-center my-10 w-full h-full">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold ">
           Blog Articles
         </h1>

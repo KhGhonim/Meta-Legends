@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { articles } from "../../../Context/DB";
 
 interface Article {
@@ -12,7 +13,7 @@ interface Article {
 export default function Articles() {
   return (
     <section id="blog" className=" text-white p-3 md:p-5 lg:p-8">
-      <div  className="max-w-7xl mx-auto lg:px-5">
+      <div className="max-w-7xl mx-auto lg:px-5">
         <div className="flex flex-row gap-6">
           <div className=" w-full   md:w-3/6 h-full flex flex-col">
             <div
@@ -47,9 +48,12 @@ export default function Articles() {
                 </p>
               </div>
             </div>
-            <button className="w-full mt-8 CTSButton little text-white py-3 rounded-lg">
+            <Link
+              className="w-full mt-8 z-50 CTSButton little text-white py-3 px-10 rounded-lg"
+              to={"blog"}
+            >
               READ ALL ARTICLES
-            </button>
+            </Link>
           </div>
 
           <div className="hidden w-3/6 md:flex flex-col gap-5">

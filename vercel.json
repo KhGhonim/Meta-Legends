@@ -11,6 +11,8 @@
     { "source": "/water-effect", "destination": "/index.html" },
     { "source": "/search-no-results", "destination": "/index.html" },
     { "source": "/fullslider-carousel", "destination": "/index.html" },
+    { "source": "/orgin", "destination": "/index.html" },
+    { "source": "/articles/:slug", "destination": "/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
