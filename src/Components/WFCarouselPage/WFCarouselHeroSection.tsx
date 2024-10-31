@@ -1,25 +1,16 @@
 import WaterWave from "react-water-wave";
 import image from "../../assets/wf.png";
+import WFCarouselSlider from "./WFCarouselSlider/WFCarouselSlider";
 
 export default function WFCarouselHeroSection() {
   return (
     <div>
       <WaterWave
         imageUrl={image as string}
-        style={{
-          width: "100%",
-          height: "100%",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          position: "absolute",
-          inset: "0",
-          zIndex: 0,
-        }}
+        className="w-full h-full bg-cover bg-center bg-no-repeat absolute inset-0 z-10"
       >
         {() => (
-          <div className="w-full h-full flex flex-col md:flex-row container mx-auto">
-            <div className="absolute inset-0 bg-[#261E2D]/50"></div>
+          <div className="w-full h-full py-0  md:py-48 lg:py-44 px-3 flex flex-col md:flex-row container mx-auto">
             <div className="w-full md:w-1/3 h-full flex flex-col justify-center items-center py-8 px-5 space-y-5">
               <div className="relative ">
                 <h1 className="text-4xl z-10 md:text-6xl lg:text-7xl font-bold ">
@@ -41,7 +32,11 @@ export default function WFCarouselHeroSection() {
                 Buy Now
               </button>
             </div>
-            <div className="w-full md:w-2/3 h-full "></div>
+            <div className="w-full md:w-2/3 h-full  flex  justify-center ">
+              <WFCarouselSlider />
+            </div>
+
+            <div className="absolute inset-0 bg-[#261E2D]/40"></div>
           </div>
         )}
       </WaterWave>

@@ -39,6 +39,7 @@ export default function PublicMInt() {
 
   const [Q, setQ] = useState<number>(1);
   const [Total, setTotal] = useState<number>(2.25);
+  const [remaining, setremaining] = useState(344);
 
   const HandleMinus = () => {
     setQ((prev) => {
@@ -46,6 +47,7 @@ export default function PublicMInt() {
         return prev; // Prevent going below 1
       } else {
         const newQ = prev - 1;
+        setremaining(remaining + 1);
         setTotal(newQ * 2.25); // Update total after decreasing
         return newQ;
       }
@@ -58,6 +60,7 @@ export default function PublicMInt() {
         return prev; // Prevent going above 5
       } else {
         const newQ = prev + 1;
+        setremaining(remaining - 1);
         setTotal(newQ * 2.25); // Update total after increasing
         return newQ;
       }
@@ -90,7 +93,7 @@ export default function PublicMInt() {
                 Remaining
               </h1>
               <p className="text-[#dddd] text-sm md:text-2xl font-bold">
-                344/999
+                {remaining}/999
               </p>
               <div className="w-full h-[0.5px]  bg-[#dddddd60] relative">
                 <div className="absolute w-full  group-hover:h-[2px]  scale-x-0 group-hover:bg-purple-500 origin-left transition-all duration-700 group-hover:scale-x-100"></div>
@@ -138,17 +141,17 @@ export default function PublicMInt() {
           </div>
 
           <div className="w-full">
-            <p className="text-[#dddddd6a] text-sm md:text-base lg:text-2xl">
+            <p className="text-[#dddddd6a] text-sm md:text-base lg:text-lg">
               {" "}
               By clicking “MINT NOW” button, you agree to our
             </p>
-            <p className="text-[#dddddd6a] text-sm md:text-base lg:text-2xl">
+            <p className="text-[#dddddd6a] text-sm md:text-base lg:text-lg">
               {" "}
-              <span className="relative mr-1 text-sm md:text-base lg:text-2xl cursor-pointer text-[#dddd] inline-block bg-gradient-to-r from-purple-700 to-purple-700 bg-[length:0%_100%] bg-clip-text bg-left bg-no-repeat hover:bg-[length:100%_100%] transition-all duration-700 ease-in-out ">
+              <span className="relative mr-1 text-sm md:text-base lg:text-lg cursor-pointer text-[#dddd] inline-block bg-gradient-to-r from-purple-700 to-purple-700 bg-[length:0%_100%] bg-clip-text bg-left bg-no-repeat hover:bg-[length:100%_100%] transition-all duration-700 ease-in-out ">
                 Terms of Service
               </span>
               and our{" "}
-              <span className="relative text-sm md:text-base lg:text-2xl text-[#dddd] cursor-pointer inline-block bg-gradient-to-r from-purple-700 to-purple-700 bg-[length:0%_100%] bg-clip-text bg-left bg-no-repeat hover:bg-[length:100%_100%] transition-all duration-700 ease-in-out ">
+              <span className="relative text-sm md:text-base lg:text-lg text-[#dddd] cursor-pointer inline-block bg-gradient-to-r from-purple-700 to-purple-700 bg-[length:0%_100%] bg-clip-text bg-left bg-no-repeat hover:bg-[length:100%_100%] transition-all duration-700 ease-in-out ">
                 Privacy Policy
               </span>
               .

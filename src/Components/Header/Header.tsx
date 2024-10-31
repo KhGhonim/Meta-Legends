@@ -46,8 +46,6 @@ export default function Header() {
     useState<boolean>(false);
   const [IsLeftSideBarOpened, setIsLeftSideBarOpened] =
     useState<boolean>(false);
-  console.log(`Show Content of ${HumbergerMenuContent}`);
-
   const [IsSideBarRightOpened, setIsSideBarRightOpened] =
     useState<boolean>(false);
   useEffect(() => {
@@ -142,16 +140,15 @@ export default function Header() {
           Connect To Wallet
         </button>
       </header>
-
       {/* Mobile and Tablet Header Component */}
       <header>
         {/* 1st Mobile Header Component */}
         <div
           className={` lg:hidden transition-all duration-500 
-bg-gradient-to-r from-[rgb(27,17,38)] to-[rgb(24,17,36)] border-b-[0.5px] border-[#ffffff1a]  shadow-md 
-      px-8 py-4 flex items-center justify-between z-50`}
+bg-gradient-to-r from-[rgb(27,17,38)]  to-[rgb(24,17,36)] border-b-[0.5px] border-[#ffffff1a]  shadow-md 
+      px-8 py-4 flex items-center justify-between relative z-20`}
         >
-          <div className="flex items-center">
+          <div className="flex items-center z-50">
             <div
               onClick={() => setIsLeftSideBarOpened(!IsLeftSideBarOpened)}
               className="bg-black rounded-full p-3 cursor-pointer little   hover:shadow-custom transition-all duration-500"
@@ -164,7 +161,7 @@ bg-gradient-to-r from-[rgb(27,17,38)] to-[rgb(24,17,36)] border-b-[0.5px] border
               <h1>Khaled Ghonim</h1>
             </div>
           </div>
-          <nav className="hidden lg:flex space-x-10">
+          <nav className="hidden lg:flex space-x-10 z-50">
             {HeaderNav?.map(
               (item: { Name: string; Link: string }, i: number) => (
                 <a
@@ -180,7 +177,7 @@ bg-gradient-to-r from-[rgb(27,17,38)] to-[rgb(24,17,36)] border-b-[0.5px] border
           </nav>
           <button
             onClick={() => setIsSideBarRightOpened(!IsSideBarRightOpened)}
-            className="CTSButton little lg:hidden justify-center text-[#ddd] hover:text-[#fff] hover:shadow-custom transition-all duration-500 capitalize items-center px-6 py-3 rounded-lg"
+            className="CTSButton little lg:hidden z-50 justify-center text-[#ddd] hover:text-[#fff] hover:shadow-custom transition-all duration-500 capitalize items-center px-6 py-3 rounded-lg"
           >
             Wallet
           </button>

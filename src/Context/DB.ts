@@ -93,6 +93,7 @@ export const Submenu = [
     subItems: [ // Added submenu items
       { Name: "Bended Carousel with Video Background", Link: "/bended-carousel" },
       { Name: "Water Effect", Link: "/water-effect" },
+      { Name: "Full Slider Carousel", Link: "/fullslider-carousel" },
 
     ]
   },

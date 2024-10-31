@@ -9,6 +9,7 @@ export default function SecoundHeroSection() {
             src={SecoundHeroSectionBGPhoto}
             className="w-full h-full object-cover rounded-md"
             alt=""
+            loading="lazy"
           />
         </div>
         <div className="absolute inset-0 w-full lg:w-10/12 h-full bg-gradient-to-r from-[rgb(27,17,38)] to-[rgb(0,0,0)] opacity-70"></div>

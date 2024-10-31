@@ -1,11 +1,11 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { filterCategories, products } from "../../../Context/DB";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 
 export default function FilterSection() {
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
-  const [openAccordion, setOpenAccordion] = useState<number | null>(null);
+  const [openAccordion, setOpenAccordion] = useState<number>(0);
   const filteredProducts = products.filter((product) => {
     if (!product.catagory) return false;
     return (
@@ -15,7 +15,9 @@ export default function FilterSection() {
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const toggleAccordion = (index: number) => {
-    setOpenAccordion(openAccordion === index ? null : index);
+    // Prevent closing if it's the last open accordion
+    if (openAccordion === index) return;
+    setOpenAccordion(index);
   };
   const clearFilters = () => setActiveFilters([]);
 
@@ -27,13 +29,24 @@ export default function FilterSection() {
     }
   };
 
+  useEffect(() => {
+    // Update maxHeight for each open accordion on initial load
+    contentRefs.current.forEach((ref, index) => {
+      if (ref) {
+        ref.style.maxHeight =
+          openAccordion === index ? `${ref.scrollHeight}px` : "0px";
+      }
+    });
+  }, [openAccordion]);
+
   return (
-    <div className="flex flex-col md:flex-row gap-6 p-6  container mx-auto text-white min-h-screen">
+    <div className="flex flex-col md:flex-row gap-6 p-6  lg:container lg:mx-auto text-white min-h-screen">
       {/* Left sidebar with accordion */}
       <div className="w-full md:w-1/4 z-30 h-full p-4 rounded-lg">
         {/* Category Accordion */}
         {filterCategories?.map((category, index) => {
           const isOpen = openAccordion === index;
+
           return (
             <div key={index}>
               <div
@@ -54,10 +67,7 @@ export default function FilterSection() {
                 ref={(el) => (contentRefs.current[index] = el)}
                 style={{
                   maxHeight: isOpen
-                    ? `${
-                        (contentRefs.current[index] as HTMLDivElement)
-                          .scrollHeight
-                      }px`
+                    ? `${contentRefs.current[index]?.scrollHeight}px`
                     : "0px",
                 }}
                 className={`transition-max-height duration-500 overflow-hidden bg-[#0f0f0f]/65 px-6 flex flex-col rounded text-white`}
@@ -124,7 +134,7 @@ export default function FilterSection() {
         </div>
 
         {/* Product grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredProducts?.map((product) => (
             <div
               key={product.id}

@@ -23,9 +23,7 @@ export default function Collection() {
           </div>
         </div>
       </div>
-
       <Divider />
-
       <FilterSection />
     </div>
   );

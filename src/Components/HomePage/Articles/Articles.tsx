@@ -34,6 +34,7 @@ export default function Articles() {
                 src={articles[0]?.image}
                 alt={articles[0]?.title}
                 className="w-full h-96 object-cover rounded-lg mb-4"
+                loading="lazy"
               />
 
               <div className="flex flex-row items-center group cursor-pointer py-6">

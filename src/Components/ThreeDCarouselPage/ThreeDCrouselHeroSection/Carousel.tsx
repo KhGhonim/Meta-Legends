@@ -21,6 +21,10 @@ export default function Carousel() {
   const [secoundPerviousIndex, setsecoundPerviousIndex] = useState(
     Photos.length - 2
   );
+  const [thirdNextIndex, setthirdNextIndex] = useState(2);
+  const [thirdPerviousIndex, setthirdPerviousIndex] = useState(
+    Photos.length - 2
+  );
 
   const handleSlideChange = (swiper: SwiperInstance) => {
     setActiveIndex(swiper.activeIndex);
@@ -28,6 +32,8 @@ export default function Carousel() {
     setPreviousIndex((swiper.activeIndex - 1) % Photos.length);
     setSecoundNextIndex((swiper.activeIndex + 2) % Photos.length);
     setsecoundPerviousIndex((swiper.activeIndex - 2) % Photos.length);
+    setthirdNextIndex((swiper.activeIndex + 3) % Photos.length);
+    setthirdPerviousIndex((swiper.activeIndex - 3) % Photos.length);
   };
   return (
     <Swiper
@@ -54,13 +60,13 @@ export default function Carousel() {
       onSlideChange={handleSlideChange}
       modules={[Autoplay]}
       onRealIndexChange={(swiper) => setActiveIndex(swiper.realIndex)}
-      className="mySwiper w-full h-full"
+      className="mySwiper w-full h-full  "
     >
       {Photos.map((character: Character, index) => {
         return (
           <SwiperSlide
             key={index}
-            className="relative w-96 h-96 flex justify-center items-center"
+            className="relative w-96 h-96  flex justify-center items-center"
           >
             <div
               className={`absolute transition-all duration-700 ease-in-out ${
@@ -73,6 +79,10 @@ export default function Carousel() {
                   : index === SecoundNextIndex
                   ? "z-10 scale-75 translate-y-40 rotate-[40deg]"
                   : index === secoundPerviousIndex
+                  ? "z-10 scale-75 translate-y-40 rotate-[-40deg]"
+                  : index === thirdNextIndex
+                  ? "z-10 scale-75 translate-y-40 rotate-[40deg]"
+                  : index === thirdPerviousIndex
                   ? "z-10 scale-75 translate-y-40 rotate-[-40deg]"
                   : "z-0 scale-0"
               }`}

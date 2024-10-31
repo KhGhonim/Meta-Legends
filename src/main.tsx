@@ -20,6 +20,7 @@ import Protected from "./Pages/Protected/Protected";
 import SearchNotFound from "./Pages/SearchNotFound/SearchNotFound";
 import ThreeDCarousel from "./Pages/ThreeDCarousel/ThreeDCarousel";
 import WFCarousel from "./Pages/WFCarousel/WFCarousel";
+import FullScreenSlider from "./Pages/FullScreenSlider/FullScreenSlider";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -34,6 +35,7 @@ const router = createBrowserRouter(
       <Route path="/bended-carousel" element={<ThreeDCarousel />} />
       <Route path="/water-effect" element={<WFCarousel />} />
       <Route path="/search-no-results" element={<SearchNotFound />} />
+      <Route path="/fullslider-carousel" element={<FullScreenSlider />} />
       <Route path="/*" element={<ErrorNotFound />} />
 
       {/* ... etc. */}

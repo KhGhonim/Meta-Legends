@@ -44,7 +44,7 @@ export default function ImageCard({
       className={`relative w-[${size.width}] h-[${size.height}] rounded-3xl p-5 transition-all duration-500 ease-in-out transform ${animationClass} backdrop-blur-[250px] bg-transparent bg-opacity-30 border border-white shadow-2xl`}
     >
       <img
-        src={Photos[currentPhotoIndex]?.src} // Safeguard: Use optional chaining to prevent errors
+        src={Photos[currentPhotoIndex]?.src} // Use optional chaining to prevent errors
         alt={Photos[currentPhotoIndex]?.alt}
         loading="lazy"
         className="rounded-3xl w-full h-full object-cover"

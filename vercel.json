@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/mint", "destination": "/index.html" },
+    { "source": "/collection", "destination": "/index.html" },
+    { "source": "/blog", "destination": "/index.html" },
+    { "source": "/contact", "destination": "/index.html" },
+    { "source": "/soon", "destination": "/index.html" },
+    { "source": "/protected", "destination": "/index.html" },
+    { "source": "/bended-carousel", "destination": "/index.html" },
+    { "source": "/water-effect", "destination": "/index.html" },
+    { "source": "/search-no-results", "destination": "/index.html" },
+    { "source": "/fullslider-carousel", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

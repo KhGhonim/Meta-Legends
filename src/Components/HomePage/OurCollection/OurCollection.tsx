@@ -5,7 +5,7 @@ export default function OurCollection() {
   const totalCards = 8; // Ensure this matches the number of ImageCards rendered
   const cardsPerCycle = 2; // Number of cards to update per cycle
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]); // Active cards for rotation
-
+  
   useEffect(() => {
     const updateCycle = () => {
       // Generate two unique random indices for active ImageCards
