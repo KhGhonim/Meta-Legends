@@ -1,5 +1,6 @@
 import Stars from "../../../assets/Stars.mp4";
 import Carousel from "./Carousel";
+import PhoneCarousel from "./PhoneCarousel";
 
 export default function ThreeDCrouselHeroSection() {
   return (
@@ -17,7 +18,7 @@ export default function ThreeDCrouselHeroSection() {
       </video>
 
       {/* Content Overlay */}
-      <div className="relative z-10 pt-20 flex flex-col justify-center items-center text-white h-full">
+      <div className="relative z-10 pt-20 flex flex-col justify-center items-center w-full text-white h-full">
         {/* Title */}
         <div className="relative mb-10">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">
@@ -28,8 +29,11 @@ export default function ThreeDCrouselHeroSection() {
           </h1>
         </div>
 
-        {/* Carousel */}
+        {/* Carousel For Desktop */}
         <Carousel />
+
+        {/* Carousel For Mobile */}
+        <PhoneCarousel />
       </div>
     </div>
   );

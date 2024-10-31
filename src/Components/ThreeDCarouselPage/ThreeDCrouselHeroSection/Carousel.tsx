@@ -21,10 +21,6 @@ export default function Carousel() {
   const [secoundPerviousIndex, setsecoundPerviousIndex] = useState(
     Photos.length - 2
   );
-  const [thirdNextIndex, setthirdNextIndex] = useState(2);
-  const [thirdPerviousIndex, setthirdPerviousIndex] = useState(
-    Photos.length - 2
-  );
 
   const handleSlideChange = (swiper: SwiperInstance) => {
     setActiveIndex(swiper.activeIndex);
@@ -32,8 +28,6 @@ export default function Carousel() {
     setPreviousIndex((swiper.activeIndex - 1) % Photos.length);
     setSecoundNextIndex((swiper.activeIndex + 2) % Photos.length);
     setsecoundPerviousIndex((swiper.activeIndex - 2) % Photos.length);
-    setthirdNextIndex((swiper.activeIndex + 3) % Photos.length);
-    setthirdPerviousIndex((swiper.activeIndex - 3) % Photos.length);
   };
   return (
     <Swiper
@@ -60,7 +54,7 @@ export default function Carousel() {
       onSlideChange={handleSlideChange}
       modules={[Autoplay]}
       onRealIndexChange={(swiper) => setActiveIndex(swiper.realIndex)}
-      className="mySwiper w-full h-full  "
+      className="mySwiper w-full h-full hidden lg:block  "
     >
       {Photos.map((character: Character, index) => {
         return (
@@ -69,21 +63,17 @@ export default function Carousel() {
             className="relative w-96 h-96  flex justify-center items-center"
           >
             <div
-              className={`absolute transition-all duration-700 ease-in-out ${
+              className={`absolute left-full hidden lg:block transform translate-x-3/4 transition-all duration-700 ease-in-out ${
                 index === activeIndex
-                  ? "z-20 scale-100"
+                  ? "z-40 scale-100"
                   : index === nextIndex
-                  ? "z-10 scale-75 rotate-[24deg]"
+                  ? "z-30 scale-75 rotate-[24deg]"
                   : index === previousIndex
-                  ? "z-10 scale-75 rotate-[-20deg]"
+                  ? "z-30 scale-75 rotate-[-24deg]"
                   : index === SecoundNextIndex
-                  ? "z-10 scale-75 translate-y-40 rotate-[40deg]"
+                  ? "z-20 scale-75  translate-y-40 rotate-[30deg]"
                   : index === secoundPerviousIndex
-                  ? "z-10 scale-75 translate-y-40 rotate-[-40deg]"
-                  : index === thirdNextIndex
-                  ? "z-10 scale-75 translate-y-40 rotate-[40deg]"
-                  : index === thirdPerviousIndex
-                  ? "z-10 scale-75 translate-y-40 rotate-[-40deg]"
+                  ? "z-20 scale-75 translate-y-40 rotate-[-30deg]"
                   : "z-0 scale-0"
               }`}
             >
