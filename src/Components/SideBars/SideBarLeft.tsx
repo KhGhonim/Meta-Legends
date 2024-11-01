@@ -155,7 +155,7 @@ export default function SideBarLeft({
         </div>
 
         {/* Call to Action Buttons */}
-        <div className="space-y-4 mb-8">
+        <div className="space-y-2 mb-6">
           <button className="w-full flex items-center justify-center py-3 bg-gradient-to-r from-purple-600 to-indigo-500 text-white font-bold rounded-xl hover:bg-opacity-90 transition-all duration-300 shadow-lg">
             <span>🚀 Explore Now</span>
           </button>

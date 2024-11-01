@@ -146,7 +146,7 @@ export default function Header() {
         <div
           className={` lg:hidden transition-all duration-500 
 bg-gradient-to-r from-[rgb(27,17,38)]  to-[rgb(24,17,36)] border-b-[0.5px] border-[#ffffff1a]  shadow-md 
-      px-8 py-4 flex items-center justify-between relative z-20`}
+      px-8 py-4 flex items-center justify-between relative z-40`}
         >
           <div className="flex items-center z-50">
             <div
@@ -185,9 +185,7 @@ bg-gradient-to-r from-[rgb(27,17,38)]  to-[rgb(24,17,36)] border-b-[0.5px] borde
 
         {/* 2nd Mobile Header Component */}
         <div
-          className={` lg:hidden transition-all duration-500 
-bg-gradient-to-r from-[rgb(27,17,38)] to-[rgb(24,17,36)] border-b-[0.5px] border-[#ffffff1a]  shadow-md 
-      px-4 py-4 flex items-center justify-between relative z-20`}
+          className={` lg:hidden transition-all duration-500  bg-gradient-to-r from-[rgb(27,17,38)] to-[rgb(24,17,36)] border-b-[0.5px] border-[#ffffff1a]  shadow-md px-4 py-4 flex items-center justify-between relative z-40`}
         >
           <div className="flex items-center">
             <Link to={"/"} className="text-white ml-5">
@@ -215,7 +213,7 @@ bg-gradient-to-r from-[rgb(27,17,38)] to-[rgb(24,17,36)] border-b-[0.5px] border
               className={`absolute top-full right-0 w-full bg-[#1B121D] text-white z-10 
       ${
         IsMenuOpen
-          ? "block h-60 opacity-100 transform scale-y-100"
+          ? "block h-auto opacity-100 transform scale-y-100"
           : "h-0 opacity-0 transform scale-y-0"
       } 
       transition-all duration-700 ease-in-out`}

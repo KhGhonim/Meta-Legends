@@ -39,16 +39,16 @@ export default function PhoneSlider() {
           </h1>
         </div>
 
-        <div className="relative flex justify-center items-center h-[400px] md:h-[700px]">
+        <div className="relative z-50 flex justify-center items-center h-[400px] md:h-[700px]">
           {Photos?.map((character: Character, index) => (
             <div
               key={index}
               className={`absolute transition-all duration-500 ease-in-out ${
                 index === activeIndex
-                  ? "z-20 scale-110"
+                  ? "z-50 scale-110"
                   : index === (activeIndex + 1) % 17
-                  ? "z-10 -translate-x-1/2 scale-90  "
-                  : "z-0 translate-x-1/2 scale-90 "
+                  ? "z-40 -translate-x-1/2 scale-90  "
+                  : "z-30 translate-x-1/2 scale-90 "
               }`}
             >
               <div className="relative w-[200px] md:w-[400px] h-[300px] md:h-[600px] rounded-3xl  p-3 md:p-5  backdrop-blur-[4.2px] bg-transparent bg-opacity-30 border border-white shadow-2xl transform perspective-1000 rotateY-5">
@@ -63,29 +63,29 @@ export default function PhoneSlider() {
           ))}
         </div>
       </div>
-      <div className="flex items-center justify-center space-x-4">
-        <div className="flex items-center">
-          <div className="w-1.5 h-1.5 rounded-full bg-purple-500 opacity-50"></div>
+      <div className="flex items-center z-50 justify-center space-x-4">
+        <div className="flex items-center z-50">
+          <div className="w-1.5 h-1.5 z-50 rounded-full bg-purple-500 opacity-50"></div>
           <button
             onClick={handlePrev}
-            className="mx-3 p-3 rounded-full border-2 border-purple-500 bg-transparent hover:bg-purple-900 text-purple-300"
+            className="mx-3 p-3 rounded-full z-50 border-2 border-purple-500 bg-transparent hover:bg-purple-900 text-purple-300"
           >
-            <FaChevronLeft className="h-4 w-4" />
+            <FaChevronLeft className="h-4 w-4 z-50" />
             <span className="sr-only">Previous slide</span>
           </button>
-          <div className="w-1.5 h-1.5 rounded-full bg-purple-500 opacity-50"></div>
+          <div className="w-1.5 h-1.5 rounded-full z-50 bg-purple-500 opacity-50"></div>
         </div>
-        <div className="w-12 h-0.5 bg-purple-700"></div>
-        <div className="flex items-center">
-          <div className="w-1.5 h-1.5 rounded-full bg-purple-500 opacity-50"></div>
+        <div className="w-12 h-0.5 bg-purple-700 z-50"></div>
+        <div className="flex items-center z-50">
+          <div className="w-1.5 h-1.5 rounded-full z-50 bg-purple-500 opacity-50"></div>
           <button
             onClick={handleNext}
-            className="mx-3 p-3 rounded-full border-2 border-purple-500 bg-transparent hover:bg-purple-900 text-purple-300"
+            className="mx-3 p-3 rounded-full z-50 border-2 border-purple-500 bg-transparent hover:bg-purple-900 text-purple-300"
           >
-            <FaChevronRight className="h-4 w-4" />
+            <FaChevronRight className="h-4 z-50 w-4" />
             <span className="sr-only">Next slide</span>
           </button>
-          <div className="w-1.5 h-1.5 rounded-full bg-purple-500 opacity-50"></div>
+          <div className="w-1.5 h-1.5 z-50 rounded-full bg-purple-500 opacity-50"></div>
         </div>
       </div>
     </section>
