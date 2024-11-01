@@ -1,35 +1,35 @@
-import { useState, useEffect } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { Photos } from "../../../../Context/DB";
+// import { useState, useEffect } from "react";
+// import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+// import { Photos } from "../../../../Context/DB";
 
-interface Character {
-  src: string;
-  alt: string;
-}
+// interface Character {
+//   src: string;
+//   alt: string;
+// }
 
 export default function PhoneSlider() {
-  const [activeIndex, setActiveIndex] = useState<number>(1);
+  // const [activeIndex, setActiveIndex] = useState<number>(1);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % 17);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setActiveIndex((prevIndex) => (prevIndex + 1) % 17);
+  //   }, 5000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
-  const handleNext = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % 17);
-  };
+  // const handleNext = () => {
+  //   setActiveIndex((prevIndex) => (prevIndex + 1) % 17);
+  // };
 
-  const handlePrev = () => {
-    setActiveIndex(
-      (prevIndex) => (prevIndex - 1 + Photos.length) % Photos.length
-    );
-  };
+  // const handlePrev = () => {
+  //   setActiveIndex(
+  //     (prevIndex) => (prevIndex - 1 + Photos.length) % Photos.length
+  //   );
+  // };
 
   return (
     <section className="block lg:hidden relative min-h-screen z-10  overflow-hidden">
-      <div className="container mx-auto px-4 py-16 text-center">
+      {/* <div className="container mx-auto px-4 py-16 text-center">
         <div className="relative mb-3 md:mb-10">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold ">
             Meta Legends
@@ -87,7 +87,7 @@ export default function PhoneSlider() {
           </button>
           <div className="w-1.5 h-1.5 z-50 rounded-full bg-purple-500 opacity-50"></div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
