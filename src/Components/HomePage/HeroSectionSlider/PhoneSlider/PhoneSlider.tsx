@@ -40,8 +40,8 @@ export default function PhoneSlider() {
               isActive
                 ? "z-20 scale-105 opacity-100"
                 : isNext
-                ? "z-10 scale-90 opacity-70"
-                : "z-0 scale-90 opacity-0"
+                ? "z-10 -translate-x-1/2 scale-90"
+                : "z-0 translate-x-1/2 scale-90"
             }`}
           >
             <div className="relative w-[200px] md:w-[400px] h-[300px] md:h-[600px] rounded-3xl p-3 md:p-5 backdrop-blur-[4.2px] bg-transparent bg-opacity-30 border border-white shadow-2xl transform perspective-1000 rotateY-5">
