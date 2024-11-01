@@ -1,7 +1,7 @@
 import mask from "../../../assets/Meta/mask.png";
 export default function OrginizationHeroSection() {
   return (
-    <div className="w-full h-full flex flex-col lg:flex-row lg:py-20">
+    <div className="w-full h-full flex flex-col mb-10 lg:flex-row lg:py-20">
       <div className="w-full lg:w-1/2  lg:my-60">
         <div className="relative text-center ">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold ">

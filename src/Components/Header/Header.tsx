@@ -146,7 +146,7 @@ export default function Header() {
         <div
           className={` lg:hidden transition-all duration-500 
 bg-gradient-to-r from-[rgb(27,17,38)]  to-[rgb(24,17,36)] border-b-[0.5px] border-[#ffffff1a]  shadow-md 
-      px-8 py-4 flex items-center justify-between relative z-40`}
+      px-8 py-4 flex items-center justify-between relative z-30`}
         >
           <div className="flex items-center z-50">
             <div
@@ -185,7 +185,7 @@ bg-gradient-to-r from-[rgb(27,17,38)]  to-[rgb(24,17,36)] border-b-[0.5px] borde
 
         {/* 2nd Mobile Header Component */}
         <div
-          className={` lg:hidden transition-all duration-500  bg-gradient-to-r from-[rgb(27,17,38)] to-[rgb(24,17,36)] border-b-[0.5px] border-[#ffffff1a]  shadow-md px-4 py-4 flex items-center justify-between relative z-40`}
+          className={` lg:hidden transition-all duration-500  bg-gradient-to-r from-[rgb(27,17,38)] to-[rgb(24,17,36)] border-b-[0.5px] border-[#ffffff1a]  shadow-md px-4 py-4 flex items-center justify-between relative z-30`}
         >
           <div className="flex items-center">
             <Link to={"/"} className="text-white ml-5">

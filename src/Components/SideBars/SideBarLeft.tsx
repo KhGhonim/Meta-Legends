@@ -195,7 +195,7 @@ export default function SideBarLeft({
           ) : (
             <motion.ul
               key="main-menu"
-              className="space-y-3 absolute top-0 left-0 w-full"
+              className="space-y-2 md:space-y-3 absolute top-0 left-0 w-full"
               variants={mainMenuVariants}
               initial={IsSubMenuOpened ? "open" : "closed"}
               animate="open"
@@ -210,6 +210,9 @@ export default function SideBarLeft({
                       if (item?.subItems) {
                         setIsSubMenuOpened(true);
                         setSubMenuItems(item?.subItems);
+                        
+                      } else {
+                        setIsLeftSideBarOpened(false);
                       }
                     }}
                   >

@@ -1,3 +1,4 @@
+import OrginizationAvatar from "../../Components/OrginizationPage/OrginizationAvatar/OrginizationAvatar";
 import OrginizationHeroSection from "../../Components/OrginizationPage/OrginizationHeroSection/OrginizationHeroSection";
 import bg from "../../assets/bg.avif";
 
@@ -18,6 +19,7 @@ export default function Orginization() {
       className="w-full h-full"
     >
       <OrginizationHeroSection />
+      <OrginizationAvatar />
     </div>
   );
 }
