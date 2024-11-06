@@ -4,8 +4,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 
 export default function OrginizationAvatar() {
-  const [selectedFaction, setSelectedFaction] = useState(factions[0]);
-  const [selectedImage, setSelectedImage] = useState(factions[0].mainImage);
+  const [selectedFaction, setSelectedFaction] = useState<{
+    id: string;
+    name: string;
+    iconGray: string;
+    iconColor: string;
+    description: string;
+    units: string;
+    mainImage: string;
+    subImages: string[];
+  }>(factions[0]);
+  const [selectedImage, setSelectedImage] = useState<string>(
+    factions[0].mainImage
+  );
 
   return (
     <div className="h-auto bg-black bg-opacity-15 rounded-lg  border-t-[1px]  mt-20 shadow-2xl border-[#ffffff1a] border-b-[1px] text-white lg:py-8 lg:px-16">
@@ -37,7 +48,6 @@ export default function OrginizationAvatar() {
                   }}
                   src={image}
                   alt={`${selectedFaction.name} ${index + 1}`}
-                  loading="lazy"
                   className="object-cover w-full h-full"
                 />
               </button>
@@ -49,10 +59,11 @@ export default function OrginizationAvatar() {
         <div className="space-y-8 w-full">
           {/* Faction icons */}
           <Swiper
+            slidesPerView={3}
             breakpoints={{
               640: {
                 slidesPerView: 3,
-                spaceBetween: 10,
+                spaceBetween: 0,
               },
               768: {
                 slidesPerView: 4,
@@ -79,7 +90,7 @@ export default function OrginizationAvatar() {
                     : "opacity-50"
                 }`}
               >
-                <div className="relative w-full h-full">
+                <div className="relative w-20  h-20">
                   <img
                     src={
                       selectedFaction === faction
@@ -87,7 +98,7 @@ export default function OrginizationAvatar() {
                         : faction.iconGray
                     }
                     alt={faction.name}
-                    className="object-contain"
+                    className="object-cover w-full h-full"
                     loading="lazy"
                   />
                 </div>

@@ -23,7 +23,6 @@ export default function OrginizationHeroSection() {
           src={mask}
           className="w-full h-full object-cover"
           alt="Meta Mask"
-          loading="lazy"
         />
       </div>
     </div>
